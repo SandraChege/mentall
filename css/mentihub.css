@@ -183,6 +183,14 @@
     margin: 20px;
     font-size: 20px;
 }
+/*diseases*/
+.hema .card{
+    background-color: var(--lightgreen);
+}
+.hema .card-body .nahele{
+    background-color: var(--deepteal);
+    color: var(--textcolor);
+}
 /*FOOTER*/
 footer{
     background-color: var(--greengreen) !important;
