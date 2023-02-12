@@ -1,0 +1,193 @@
+:root{
+    --poppins:'Poppins', sans-serif;
+    --roboto:'Roboto', sans-serif;
+    --montserrat:'Montserrat', sans-serif;
+    --lightgreen: #6B7C76;
+    --darkgreen: #364C44;
+    --greengreen: #8A9A93;
+    --textcolor: #EAEDE7;
+    --green: #0FCDA3;
+    --deepteal: #002C31;
+    --cloudburst: #1F2F4F;
+    --lightgreen: #ebfaf4;
+}
+/*LANDING PAGE*/
+.intro{
+    margin-left: 20px;
+}
+.intro h1{
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    color: var(--textcolor);
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+.intro p{
+    font-weight: 450;
+    font-style: normal;
+    color: var(--textcolor);
+    font-size: 24px;
+    max-width: 400px;
+    line-height: 1.1;
+    display: block;
+}
+.landimage{
+    height: 70%; 
+}
+.introbutton a{
+    background-color: var(--darkgreen);
+    padding: 5px;
+    margin: 20px;
+    font-size: 20px;
+    width: 150px;
+    color: var(--textcolor);
+}
+.introbutton a:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: var(--textcolor);
+}
+/*SIGNUP PAGE*/
+
+/*SIGNIN PAGE*/
+.form-center{
+    display:flex;
+    justify-content: center;
+}
+.kai .sol p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 550;
+    font-family: var(--poppins);
+    letter-spacing: 1px;
+}
+.zephyr .mb-3{
+    padding: 5px;
+}
+.zephyr .mb-3 label{
+    font-weight: 450;
+}
+.zephyr .mb-3 input{
+    max-width: 600px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.zephyr .mb-3 input:focus{
+   border: 1px solid ;
+   outline: none;
+}
+.tempest .btn{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: white;
+    text-decoration: none;
+    margin: 4px;
+    cursor: pointer;
+    width: 600px;
+    padding: 8px;
+}
+.tempest .btn:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: white;
+    text-decoration: none;
+    margin: 4px;
+    padding: 8px;
+}
+@media screen and (max-width: 576px) {
+    .container .anil .form-center .kai .zephyr{
+        max-width: 570px;
+        padding: auto;
+    }  
+    .container .anil .form-center .kai .zephyr .mb-3 input{
+        max-width: 550px;
+        padding: auto;
+    }
+    .container .anil .form-center .kai .zephyr .tempest .btn{
+        max-width: 550px;
+        padding: auto;
+    }
+}
+@media screen and ((min-width: 400px) and (max-width: 575.98px)){
+
+    .container .anil .form-center .kai .zephyr{
+        max-width: 410px;
+        padding: auto;
+    }  
+    .container .anil .form-center .kai .zephyr .mb-3 input{
+        max-width: 400px;
+        padding: auto;
+    }
+    .container .anil .form-center .kai .zephyr .tempest .btn{
+        max-width: 400px;
+        padding: auto;
+    }
+}
+@media screen and (max-width: 400px) {
+    .container .anil .form-center .kai .zephyr{
+        max-width: 380px;
+        padding: auto;
+    }  
+    .container .anil .form-center .kai .zephyr .mb-3 input{
+        max-width: 360px;
+        padding: auto;
+    }
+    .container .anil .form-center .kai .zephyr .tempest .btn{
+        max-width: 360px;
+        padding: auto;
+    }
+}
+@media screen and (max-width: 280px) {
+    .container .anil .form-center .kai .zephyr{
+        max-width: 250px;
+        padding: auto;
+    }  
+    .container .anil .form-center .kai .zephyr .mb-3 input{
+        max-width: 230px;
+        padding: auto;
+    }
+    .container .anil .form-center .kai .zephyr .tempest .btn{
+        max-width: 230px;
+        padding: auto;
+    }
+}
+/*HOMEPAGE*/
+.container{
+    margin-top: -10px;
+}
+.container .palinourous .ramiel p{
+    font-weight: 500;
+    color: var(--deepteal);
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--poppins);
+    letter-spacing: 1px;
+}
+.van .kailani{
+    background-color: var(--darkgreen);
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+    color: var(--textcolor);
+}
+.van .kailani:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: var(--textcolor);
+    text-decoration: none;
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+}
+/*FOOTER*/
+footer{
+    background-color: var(--greengreen) !important;
+    margin-top: 50px;
+}
+footer .pnet p{
+    color: black;
+}
