@@ -11,6 +11,15 @@
     --cloudburst: #1F2F4F;
     --lightgreen: #ebfaf4;
 }
+/*HEADER*/
+#logo{
+    background-color: var(--lightgreen);
+}
+#logo .nav-health a{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
 /*LANDING PAGE*/
 .intro{
     margin-left: 20px;
@@ -167,6 +176,9 @@
     font-family: var(--poppins);
     letter-spacing: 1px;
 }
+.container .palinourous .hazel img{
+    margin-top: 8px;
+}
 .van .kailani{
     background-color: var(--darkgreen);
     padding: 15px;
@@ -184,6 +196,9 @@
     font-size: 20px;
 }
 /*diseases*/
+.zeru .anyle h2{
+    padding-top: 15px;
+}
 .hema .card{
     background-color: var(--lightgreen);
 }

@@ -22,78 +22,92 @@
     <!--holds the landing page-->
     <div class="container-fluid overflow-hidden">
         <div>
-            <!--logo container-->
+            <!--logo and navbar container-->
             <header id="logo">
-                <div class="logo">
-                    <div class="row">
-                        <div class="col-12 py-3 m-1">
-                            <a href="index.html">
-                                <img src="images/Logo.png" class ="img-fluid" alt="Website logo" width="50px" height="50px">
-                            </a>
-                            <p>
-                                Mentihub
-                            </p>
+                <div class="m-0">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+                            <div>
+                                <a href="homepage.html" class="navbar-brand">
+                                    <img src="images/Logo.png" class ="img-fluid d-inline-block align-text-top" alt="Website logo" width="50px" height="50px">
+                                    <!--<span class="navbar-text" style="padding-top: 200px;">Mentihub</span>-->
+                                </a>
+                                <p>
+                                    Mentihub
+                                </p>
+                            </div>
+                            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                                <div class="navbar-nav nav-health">
+                                    <a href="homepage.html" class="nav-item nav-link active">Home</a>
+                                    <a href="diseases.html" class="nav-item nav-link">Ailments</a>
+                                    <a href="#" class="nav-item nav-link">Book a therapist</a>
+                                    <a href="#" class="nav-item nav-link">My sessions</a>
+                                    <a href="contactus.html" class="nav-item nav-link">Contact us</a>
+                                </div>
+                                <!--
+                                    <div class="navbar-nav ms-auto">
+                                        <a href="#" class="nav-item nav-link">Login</a>
+                                    </div>
+                                -->  
+                            </div>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </header>
             <!--content-->
             <div class="container">
                 <div class="palinourous">
                     <div class="hazel row">
-                        <div class="col-12">
-                            <img src="images/depression.jpg" alt="A picture showing depression" height="350px" width="1100px">
+                        <div class="col-12" style="margin-top: 25px;">
+                            <img src="images/depression.jpg" alt="A picture showing depression" height="350px" width="1100px" style="border-radius: 10px;">
                         </div>
                     </div>
-                    <div class="oliwa">
-                        <h3>
-                            Depression
-                        </h3>
-                        <p>Depression is when you experience a low mood that lasts for a long time and affects your everyday life.</p>
-
-                        <h5>Causes of depression</h5>
-                        <p>
-                            Depression can have many different causes. However, the following scenario can lead to depression:
-                            <ul>
-                                <li>Physical or sexual abuse</li>
-                                <li>Stressful life events</li>
-                                <li>Loneliness</li>
-                                <li>Death of a loved one</li>
-                                <li>Genetics and age</li>
-                                <li>Brain chemistry</li>
-                                <li>Drug abuse</li>
-                                <li>Poor diet, exercise and sleep</li>
-                                <li>Childhood neglect</li>
-                            </ul>
-
-                            <h5>Symptoms of depression</h5>
-                            <ul>
-                                <li>Feeling very sad, hopeless or worried. Children and adolescents with depression may be irritable rather than sad.</li>
-                                <li>Not enjoying things that used to bring joy.</li>
-                                <li>Being easily irritated or frustrated.</li>
-                                <li>Eating too much or too little, which may result in weight gain or weight loss.</li>
-                                <li>Trouble sleeping (insomnia) or sleeping too much (hypersomnia).</li>
-                                <li>Having low energy or fatigue.</li>
-                                <li>Having a difficult time concentrating, making decisions or remembering things.</li>
-                                <li>Experiencing physical issues like headache, stomachache or sexual dysfunction.</li>
-                                <li>Having thoughts of self-harm or suicide.</li>
-                            </ul>
-
-                            <h5>How can I manage depression</h5>
-                            <ul>
-                                <li>Try speaking with a friend, an adult, a teacher, or a member of your family.</li>
-                                <li>Do something enjoyable or nice for yourself.</li>
-                                <li>Have your parents drive you to the doctor.</li>
-                                <li>Consult a counselor for support.</li>
-                                <li>Remind yourself that things can improve.</li>
-                                <li>Spend time with those who help you feel secure and self-confident.</li>
-                                <li>Find a wat to tune out negative thoughts. Once can start dancing, painting or even watching tv.</li>
-                                <li>Avoid drug abuse</li>
-                            </ul>
-                        </p>
-
+                    <div class="col-lg-12 col-md-12 col-12 oliwa">
+                        <h3 style="margin: 10px auto 10px auto;">Depression</h3>
+                        <p class="mb-3"><span style="font-weight: 400;">Depression is when you experience a low mood that lasts for a long time and affects your everyday life.&nbsp;</span>
+                        <p class="mb-3"><strong>Causes of depression&nbsp;</strong></p>
+                        <p class="mb-3"><span style="font-weight: 400;">Depression can have many different causes. However, the following scenario can lead to depression:&nbsp;</span></p>
+                        <ul class="mb-3 ul-list">
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Physical or sexual abuse</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Stressful life events</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Loneliness</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Death of a loved one</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Genetics and age</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Brain chemistry</span></li>                                
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Drug abuse</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Poor diet, exercise and sleep</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Childhood neglect</span></li>
+                        </ul>
+                        <p class="mb-3"><strong>Signs of depression&nbsp;</strong></p>
+                        <ul class="mb-3 ul-list">
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Feeling very sad, hopeless or worried. Children and adolescents with depression may be irritable rather than sad.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Not enjoying things that used to bring joy.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Being easily irritated or frustrated.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Eating too much or too little, which may result in weight gain or weight loss.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Trouble sleeping (insomnia) or sleeping too much (hypersomnia).</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Having low energy or fatigue.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Having a difficult time concentrating, making decisions or remembering things.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Experiencing physical issues like headache, stomachache or sexual dysfunction.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Having thoughts of self-harm or suicide.</span></li>
+                        </ul>
+                        <p class="mb-3"><strong>How can I manage depression&nbsp;</strong></p>
+                        <ul class="mb-3 ul-list">
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Try speaking with a friend, an adult, a teacher, or a member of your family.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Do something enjoyable or nice for yourself.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Have your parents drive you to the doctor.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Consult a counselor for support.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Remind yourself that things can improve.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Spend time with those who help you feel secure and self-confident.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Find a wat to tune out negative thoughts. Once can start dancing, painting or even watching tv.</span></li>
+                            <li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Avoid drug abuse</span></li>
+                        </ul>
+                
+                        <p class="mb-3">&nbsp;</p>
+                        <p class="mb-3"><span style="font-weight: 400;">If you're worried about your depression, it's important to seek help as soon as possible.&nbsp;</span></p>
                     </div>
-                    
                 </div>
             </div>
         </div>
