@@ -107,6 +107,57 @@
     margin: 4px;
     padding: 8px;
 }
+/*HOMEPAGE*/
+.container{
+    margin-top: -10px;
+}
+.container .palinourous .ramiel p{
+    font-weight: 500;
+    color: var(--deepteal);
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--poppins);
+    letter-spacing: 1px;
+}
+.container .palinourous .hazel img{
+    margin-top: 8px;
+}
+.van .kailani{
+    background-color: var(--darkgreen);
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+    color: var(--textcolor);
+}
+.van .kailani:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: var(--textcolor);
+    text-decoration: none;
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+}
+/*diseases*/
+.zeru .anyle h2{
+    padding-top: 15px;
+}
+.hema .card{
+    background-color: var(--lightgreen);
+}
+.hema .card-body .nahele{
+    background-color: var(--deepteal);
+    color: var(--textcolor);
+}
+/*FOOTER*/
+footer{
+    background-color: var(--greengreen) !important;
+    margin-top: 50px;
+}
+footer .pnet p{
+    color: black;
+}
+/*MEDIA QUERIES*/
 @media screen and (max-width: 576px) {
     .container .anil .form-center .kai .zephyr{
         max-width: 570px;
@@ -163,54 +214,4 @@
         max-width: 230px;
         padding: auto;
     }
-}
-/*HOMEPAGE*/
-.container{
-    margin-top: -10px;
-}
-.container .palinourous .ramiel p{
-    font-weight: 500;
-    color: var(--deepteal);
-    text-align: center;
-    font-size: 30px;
-    font-family: var(--poppins);
-    letter-spacing: 1px;
-}
-.container .palinourous .hazel img{
-    margin-top: 8px;
-}
-.van .kailani{
-    background-color: var(--darkgreen);
-    padding: 15px;
-    margin: 20px;
-    font-size: 20px;
-    color: var(--textcolor);
-}
-.van .kailani:hover{
-    background-color: var(--darkgreen);
-    border: 1px solid var(--darkgreen);
-    color: var(--textcolor);
-    text-decoration: none;
-    padding: 15px;
-    margin: 20px;
-    font-size: 20px;
-}
-/*diseases*/
-.zeru .anyle h2{
-    padding-top: 15px;
-}
-.hema .card{
-    background-color: var(--lightgreen);
-}
-.hema .card-body .nahele{
-    background-color: var(--deepteal);
-    color: var(--textcolor);
-}
-/*FOOTER*/
-footer{
-    background-color: var(--greengreen) !important;
-    margin-top: 50px;
-}
-footer .pnet p{
-    color: black;
 }
