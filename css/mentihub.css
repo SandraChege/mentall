@@ -157,6 +157,47 @@ footer{
 footer .pnet p{
     color: black;
 }
+/*CONTACT US PAGE*/
+.contactsection .list-unstyled .fa-solid{
+    color: var(--deepteal);
+}
+.row-content .row-yago .xann{
+    margin: auto auto 5px 0px;
+    font-weight: 450;
+}
+.row-content .row-yago #name{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.row-content .row-yago #email{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.row-content .row-yago #message{
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.row-content #contact-btn{
+    background-color: var(--darkgreen);
+}
+.row-content #contact-btn{
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--darkgreen);
+}
+.row-content #contact-btn:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    margin-top: 15px;
+    border-radius: 5px;
+}
+#contact-btn .btn{
+    padding: 10px;
+    color: var(--textcolor);
+}
 /*MEDIA QUERIES*/
 @media screen and (max-width: 576px) {
     .container .anil .form-center .kai .zephyr{
