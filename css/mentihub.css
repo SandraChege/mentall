@@ -149,6 +149,103 @@
     background-color: var(--deepteal);
     color: var(--textcolor);
 }
+/*BILLING*/
+.content-panel {
+    padding: 20px;
+}
+.content-panel .title{
+    margin: 10px auto 18px auto;
+    font-size: 25px;
+    font-weight: 650;
+}
+.accepted-cards img{
+    margin: auto 5px;
+}
+.form-group label {
+    font-weight: 500;   
+}
+.form-group input {
+    margin: 8px auto;
+    border: 1px solid black;
+} 
+.form-group .help-block{
+    opacity: 0.5;
+} 
+/*
+.form-group {
+    display: flex;
+    align-items: center; /*Align items vertically in the center 
+}
+
+.form-group label {
+    flex: 1;  /*Grow to take up remaining space
+}
+*/
+.action-btn button{
+    background-color: var(--deepteal);
+    color: var(--textcolor);
+    padding: 10px 20px;
+}
+.action-btn button:hover{
+    background-color: var(--deepteal);
+    color: var(--textcolor);
+    padding: 10px 20px;
+}
+/*TIPS GENERATOR*/
+.tips-body{
+    margin: 10px 0;
+    min-height: 100vh;
+    background-color: #bec7b8;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quote-container {
+    width: auto;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    background-color: var(--greengreen);
+    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.9);
+}  
+.quote-text {
+    font-size: 2.75rem;
+}
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: var(--darkgreen);
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121,121,121,0.65);
+}
+  
+button:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255,255,255,0.65);
+}
+/* media query: Tablet or Smaller */
+@media screen and (max-width: 1000px) {
+    .quote-container {
+      margin: auto 10px;
+    }
+  
+    .quote-text {
+      font-size: 2.5rem;
+    }
+  }
 /*FOOTER*/
 footer{
     background-color: var(--greengreen) !important;
@@ -157,6 +254,7 @@ footer{
 footer .pnet p{
     color: black;
 }
+
 /*CONTACT US PAGE*/
 .contactsection .list-unstyled .fa-solid{
     color: var(--deepteal);
@@ -198,6 +296,7 @@ footer .pnet p{
     padding: 10px;
     color: var(--textcolor);
 }
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 576px) {
     .container .anil .form-center .kai .zephyr{
