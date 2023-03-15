@@ -1,3 +1,42 @@
+<?php
+    @include 'config.php';
+
+    session_start();
+
+    if(isset($_POST['submit'])){
+        $name = mysqli_real_escape_string($conn, $_POST['Username']);
+        $email = mysqli_real_escape_string($conn, $_POST['UserEmail']);
+        $phonenumber = mysqli_real_escape_string($conn, $_POST['PhoneNo']);
+        $pass = md5($_POST['Password']);
+        $cpass = md5($_POST['ConfirmPassword']);
+        $user_type = $_POST['usertype'];
+
+    $select = " SELECT * FROM user_info WHERE useremail = '$email' && password = '$pass' ";
+
+    $result = mysqli_query($conn, $select);
+
+    if(mysqli_num_rows($result) > 0){
+
+        $row = mysqli_fetch_array($result);
+
+        if($row['user_type'] == 'admin'){
+
+            $_SESSION['admin_name'] = $row['name'];
+            header('location:homepage.php');
+
+        }elseif($row['user_type'] == 'user'){
+
+            $_SESSION['user_name'] = $row['name'];
+            header('location:homepage.php');
+
+        }
+        
+    }else{
+        $error[] = 'incorrect email or password!';
+    }
+
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentihub</title>
     <!--favicon-->
-    <link rel="icon" type="image/x-icon" href="images/Logo.png"> 
+    <link rel="icon" type="image/x-icon" href="images/Logo.png">
     <!--CSS LINK-->
     <link rel="stylesheet" href="css/mentihub.css">
     <!--BOOTSTRAP CSS LINK-->
@@ -19,7 +58,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    <!--holds the Signup page-->
+    <!--holds the signin page-->
     <div class="container-fluid overflow-hidden">
         <div>
             <!--logo container-->
@@ -28,7 +67,7 @@
                     <div class="row">
                         <div class="col-12 py-3 m-1">
                             <a href="index.html">
-                                <img src="images/Logo.png" class ="img-fluid" alt="Mentihub" width="50px" height="50px">
+                                <img src="images/Logo.png" class ="img-fluid" alt="Website logo" width="50px" height="50px">
                             </a>
                             <p>
                                 Mentihub
@@ -37,43 +76,34 @@
                     </div>
                 </div>
             </header>
-            <!--FORM-->
+            <!--holds the form-->
             <div class="container">
                 <div class="anil">
                     <form action="" method="post" class="form-center">
                         <div class="kai">
                             <div class="sol">
                                 <p>
-                                  Signup
+                                  Login
                                 </p>
-                            </div>          
+                            </div>
                             <div class="zephyr">
-                                <div class="mb-3">
-                                    <label for="InputName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="InputName" name="Username" Placeholder= "Enter your first name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="InputName" class="form-label">last Name</label>
-                                    <input type="text" class="form-control" id="InputName" name="Username" Placeholder= "Enter your last name" required>
-                                </div>
+                            <?php
+                                if(isset($error)){
+                                    foreach($error as $error){
+                                        echo '<span class="error-msg">'.$error.'</span>';
+                                    };
+                                };
+                            ?>
                                 <div class="mb-3">
                                     <label for="InputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="InputEmail1" name= "Email" placeholder="Enter your Email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="InputPhoneNumber" class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control" id="InputPhoneNumber" name="Phonenumber" placeholder="Enter your Phone number" required>
+                                    <input type="email" class="form-control" id="InputEmail1" name= "UserEmail" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="InputPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="InputPassword" name="EnterPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter your Password" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm your password" required>
+                                    <input type="password" class="form-control" id="InputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="Password" required>
                                 </div>
                                 <div class="tempest">
-                                    <button type="submit" class="btn">Submit</button>
+                                    <button type="submit" class="btn" name="submit">Submit</button>
                                 </div>
                             </div>
                         </div>

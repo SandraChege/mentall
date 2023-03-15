@@ -57,8 +57,8 @@
                             </div>
 
                             <div class="introbutton">
-                                <a href="signup.html" class="btn signup">Sign Up</a>
-                                <a href="signin.html" class="btn signin">Sign in</a>
+                                <a href="signup.php" class="btn signup">Sign Up</a>
+                                <a href="signin.php" class="btn signin">Sign in</a>
                             </div>
                         </div>
                     </div>

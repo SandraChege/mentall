@@ -19,53 +19,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    <!--holds the signin page-->
+    <!--holds the landing page-->
     <div class="container-fluid overflow-hidden">
         <div>
-            <!--logo container-->
-            <header id="logoo"><!--different id-->
-                <div class="logo">
-                    <div class="row">
-                        <div class="col-12 py-3 m-1">
-                            <a href="index.html">
-                                <img src="images/Logo.png" class ="img-fluid" alt="Website logo" width="50px" height="50px">
-                            </a>
-                            <p>
-                                Mentihub
-                            </p>
-                        </div>
+            <!--logo and navbar container-->
+                <header id="logo">
+                    <div class="m-0">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid">
+                                <div>
+                                    <a href="homepage.html" class="navbar-brand">
+                                        <img src="images/Logo.png" class ="img-fluid d-inline-block align-text-top" alt="Website logo" width="50px" height="50px">
+                                        <!--<span class="navbar-text" style="padding-top: 200px;">Mentihub</span>-->
+                                    </a>
+                                     <p>
+                                        Mentihub
+                                    </p>
+                                </div>
+                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                                    <div class="navbar-nav nav-health">
+                                        <a href="homepage.html" class="nav-item nav-link active">Home</a>
+                                        <a href="diseases.html" class="nav-item nav-link">Ailments</a>
+                                        <a href="#" class="nav-item nav-link">Book a therapist</a>
+                                        <a href="#" class="nav-item nav-link">My sessions</a>
+                                        <a href="contactus.html" class="nav-item nav-link">Contact us</a>
+                                    </div>
+                                    <!--
+                                        <div class="navbar-nav ms-auto">
+                                            <a href="#" class="nav-item nav-link">Login</a>
+                                        </div>
+                                    -->  
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                </div>
-            </header>
-            <!--holds the form-->
-            <div class="container">
-                <div class="anil">
-                    <form action="/action_page.php" method="post" class="form-center">
-                        <div class="kai">
-                            <div class="sol">
-                                <p>
-                                  Login
-                                </p>
-                            </div>
-                            <div class="zephyr">
-                                <div class="mb-3">
-                                    <label for="InputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="InputEmail1" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="InputPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="InputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                </div>
-                                <div class="tempest">
-                                    <button type="submit" class="btn">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                </header>
+            <!--BOOK THERAPIST HOME-->
+            <div class="book-therpist-home">
+                <div class="section-mark-green">
+                    <img class="bg-image img-fluid" src="images/bookther.jpg" alt="background image">
+                    <div class="bdy-content">
+                        <h2>Mentihub is here for you</h2>
+                        <p>
+                            Everyone benefits from therapy. Mentihub connects you with a provider who is suited to your treatment needs after you complete the free mental health assessment on the site.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--FOOTER-->
     <footer class="text-center text-white">
         <div class="alizeh">
                 <!-- Grid container -->
@@ -114,3 +120,4 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

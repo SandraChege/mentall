@@ -43,9 +43,9 @@
     line-height: 1.1;
     display: block;
 }
-.landimage{
-    height: 70%; 
-}
+/*.landimage{
+    height: 100%; 
+}*/
 .introbutton a{
     background-color: var(--darkgreen);
     padding: 5px;
@@ -59,8 +59,18 @@
     border: 1px solid var(--darkgreen);
     color: var(--textcolor);
 }
-/*SIGNUP PAGE*/
-
+/*SIGN UP*/
+.container .anil form .error-msg{
+    margin: 10px 0;
+    display: block;
+    background-color: var(--green);
+    color: var(--textcolor);
+    padding: 10px;
+    border-radius: 5px;
+}
+#usertype{
+background-color: var(--darkgreen);
+}
 /*SIGNIN PAGE*/
 .form-center{
     display:flex;
@@ -89,22 +99,25 @@
    border: 1px solid ;
    outline: none;
 }
+.tempest{
+    margin-bottom: 1px;
+    background-color: var(--darkgreen);
+}
 .tempest .btn{
     background-color: var(--darkgreen);
     border: 1px solid var(--darkgreen);
     color: white;
     text-decoration: none;
-    margin: 4px;
     cursor: pointer;
     width: 600px;
     padding: 8px;
+    
 }
 .tempest .btn:hover{
     background-color: var(--darkgreen);
     border: 1px solid var(--darkgreen);
     color: white;
     text-decoration: none;
-    margin: 4px;
     padding: 8px;
 }
 /*HOMEPAGE*/
@@ -138,7 +151,7 @@
     margin: 20px;
     font-size: 20px;
 }
-/*diseases*/
+/*Diseases*/
 .zeru .anyle h2{
     padding-top: 15px;
 }
@@ -147,6 +160,28 @@
 }
 .hema .card-body .nahele{
     background-color: var(--deepteal);
+    color: var(--textcolor);
+}
+/*BOOK A THERAPIST*/
+/*MENTAL HEALTH QUIZ*/
+
+/*BOOK A SESSION*/
+.well-block .well-title h2{
+    margin: 20px auto auto auto;
+    padding: auto;
+}
+#book-sess{
+    margin-top: 10px;
+}
+.form-group #appoint-time{
+    border: 1px solid black;
+    margin: 8px auto;
+}
+#singlebutton{
+    background-color: var(--darkgreen);
+    padding: 10px;
+    margin: 20px;
+    font-size: 20px;
     color: var(--textcolor);
 }
 /*BILLING*/
@@ -245,16 +280,7 @@ button:active {
     .quote-text {
       font-size: 2.5rem;
     }
-  }
-/*FOOTER*/
-footer{
-    background-color: var(--greengreen) !important;
-    margin-top: 50px;
 }
-footer .pnet p{
-    color: black;
-}
-
 /*CONTACT US PAGE*/
 .contactsection .list-unstyled .fa-solid{
     color: var(--deepteal);
@@ -296,7 +322,14 @@ footer .pnet p{
     padding: 10px;
     color: var(--textcolor);
 }
-
+/*FOOTER*/
+footer{
+    background-color: var(--greengreen) !important;
+    margin-top: 50px;
+}
+footer .pnet p{
+    color: black;
+}
 /*MEDIA QUERIES*/
 @media screen and (max-width: 576px) {
     .container .anil .form-center .kai .zephyr{
