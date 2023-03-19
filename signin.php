@@ -1,39 +1,41 @@
 <?php
-    @include 'config.php';
 
-    session_start();
+@include 'config.php';
 
-    if(isset($_POST['submit'])){
-        $name = mysqli_real_escape_string($conn, $_POST['Username']);
-        $email = mysqli_real_escape_string($conn, $_POST['UserEmail']);
-        $phonenumber = mysqli_real_escape_string($conn, $_POST['PhoneNo']);
-        $pass = md5($_POST['Password']);
-        $cpass = md5($_POST['ConfirmPassword']);
-        $user_type = $_POST['usertype'];
+session_start();
+
+if(isset($_POST['submit'])){
+
+    $name = mysqli_real_escape_string($conn, $_POST['Username']);
+    $email = mysqli_real_escape_string($conn, $_POST['UserEmail']);
+    $phonenumber = mysqli_real_escape_string($conn, $_POST['PhoneNo']);
+    $pass = md5($_POST['Password']);
+    $cpass = md5($_POST['ConfirmPassword']);
+    $user_type = $_POST['usertype'];
 
     $select = " SELECT * FROM user_info WHERE useremail = '$email' && password = '$pass' ";
 
-    $result = mysqli_query($conn, $select);
+   $result = mysqli_query($conn, $select);
 
-    if(mysqli_num_rows($result) > 0){
+   if(mysqli_num_rows($result) > 0){
 
-        $row = mysqli_fetch_array($result);
+      $row = mysqli_fetch_array($result);
 
-        if($row['user_type'] == 'admin'){
+      if($row['user_type'] == 'admin'){
 
-            $_SESSION['admin_name'] = $row['name'];
-            header('location:homepage.php');
+         $_SESSION['admin_name'] = $row['name'];
+         header('location:homepage.php');
 
-        }elseif($row['user_type'] == 'user'){
+      }elseif($row['user_type'] == 'user'){
 
-            $_SESSION['user_name'] = $row['name'];
-            header('location:homepage.php');
+         $_SESSION['user_name'] = $row['name'];
+         header('location:homepage.php');
 
-        }
-        
-    }else{
-        $error[] = 'incorrect email or password!';
-    }
+      }
+     
+   }else{
+      $error[] = 'incorrect email or password!';
+   }
 
 };
 ?>
