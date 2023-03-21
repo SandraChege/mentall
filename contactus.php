@@ -1,3 +1,30 @@
+<?php
+    @include 'config.php';
+
+    if(isset($_POST['submit'])){
+        // Get form data
+        $name = $_POST['contact_name'];
+        $email = $_POST['contact_email'];
+        $message = $_POST['contact_message'];
+        
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        // Prepare and execute SQL statement
+        $stmt = $conn->prepare("INSERT INTO contact_data (contact_name, contact_email, contact_message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+        $stmt->execute();
+
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
+
+        // Redirect to thank you page
+        header("Location: thank_you_page.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,12 +98,12 @@
                             <div class="row row-content">
                                 <!--Grid column-->
                                 <div class="col-md-9 mb-md-0 mb-5">
-                                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                                    <form id="contact-form" name="contact-form" action="" method="POST">
                                         <div class="row-yago">                            
                                             <div class="col-md-12">
                                                 <div class="md-form mb-0">
                                                     <label for="name" class="xann">Your name</label>
-                                                    <input type="text" id="name" name="name" class="form-control"> 
+                                                    <input type="text" id="name" name="contact_name" class="form-control"> 
                                                 </div>
                                             </div>
                                         </div>
@@ -84,7 +111,7 @@
                                             <div class="col-md-12">
                                                 <div class="md-form mt-4">
                                                     <label for="email" class="xann">Your email</label>
-                                                    <input type="text" id="email" name="email" class="form-control">                                                    
+                                                    <input type="text" id="email" name="contact_email" class="form-control">                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -92,13 +119,13 @@
                                             <div class="col-md-12">
                                                 <div class="md-form mt-4">
                                                     <label for="message" class="xann">Your message</label>
-                                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>                                                   
+                                                    <textarea type="text" id="message" name="contact_message" rows="2" class="form-control md-textarea"></textarea>                                                   
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                     <div class="text-center text-md-left col-md-5" id="contact-btn">
-                                        <button type="submit" class="btn">Submit</button>
+                                        <button type="submit" class="btn" name="submit">Submit</button>
                                         <!--onclick="document.getElementById('contact-form').submit();"-->
                                     </div>
                                     <div class="status"></div>

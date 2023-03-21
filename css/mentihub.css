@@ -162,6 +162,10 @@ background-color: var(--darkgreen);
     background-color: var(--deepteal);
     color: var(--textcolor);
 }
+.hema .keawa .card {
+    display: flex;
+    flex-direction: column;
+}
 /*BOOK A THERAPIST*/
 /*MENTAL HEALTH QUIZ*/
 
@@ -305,21 +309,19 @@ button:active {
     border: 1px solid black;
 }
 .row-content #contact-btn{
-    background-color: var(--darkgreen);
-}
-.row-content #contact-btn{
     margin-top: 15px;
+}
+.row-content .btn{
+    background-color: var(--darkgreen);
     border-radius: 5px;
     border: 1px solid var(--darkgreen);
+    padding: 10px 30px;
+    color: var(--textcolor);
 }
-.row-content #contact-btn:hover{
+.row-content .btn:hover{
     background-color: var(--darkgreen);
     border: 1px solid var(--darkgreen);
-    margin-top: 15px;
     border-radius: 5px;
-}
-#contact-btn .btn{
-    padding: 10px;
     color: var(--textcolor);
 }
 /*FOOTER*/
