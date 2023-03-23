@@ -20,28 +20,11 @@
     font-size: 20px;
     padding: 10px;
 }
-.dropdown-menu{
-    padding: 5px;
-    z-index: 1;
-    background-color: var(--lightgreen);
-}
-  
-.dropdown-menu a {
-    color: black;
-    text-align: left;
+#logo .logbtn a{
+    background-color: var(--deepteal);
     padding: 10px;
-    
-} 
-.dropdown-menu a:hover {
-    background-color: red;
-}
-  
-.dropdown-menu li:last-child a {
-    border-bottom: none;
-}
-  
-.dropdown-menu li a:hover {
-    background-color: pink;
+    color: var(--textcolor);
+    text-align: center;
 }
 /*LANDING PAGE*/
 .intro{

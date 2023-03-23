@@ -23,40 +23,7 @@
     <div class="container-fluid overflow-hidden">
         <div>
             <!--logo and navbar container-->
-                <header id="logo">
-                    <div class="m-0">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid">
-                                <div>
-                                    <a href="homepage.html" class="navbar-brand">
-                                        <img src="images/Logo.png" class ="img-fluid d-inline-block align-text-top" alt="Website logo" width="50px" height="50px">
-                                        <!--<span class="navbar-text" style="padding-top: 200px;">Mentihub</span>-->
-                                    </a>
-                                     <p>
-                                        Mentihub
-                                    </p>
-                                </div>
-                                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                                    <div class="navbar-nav nav-health">
-                                        <a href="homepage.html" class="nav-item nav-link active">Home</a>
-                                        <a href="diseases.html" class="nav-item nav-link">Ailments</a>
-                                        <a href="#" class="nav-item nav-link">Book a therapist</a>
-                                        <a href="#" class="nav-item nav-link">My sessions</a>
-                                        <a href="contactus.html" class="nav-item nav-link">Contact us</a>
-                                    </div>
-                                    <!--
-                                        <div class="navbar-nav ms-auto">
-                                            <a href="#" class="nav-item nav-link">Login</a>
-                                        </div>
-                                    -->  
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </header>
+                
                 <!--generates mental health tips-->
                 <div class="tips-body">
                     <div class="quote-container" id="quote-container">
