@@ -6,8 +6,8 @@
        $name = mysqli_real_escape_string($conn, $_POST['Username']);
        $email = mysqli_real_escape_string($conn, $_POST['UserEmail']);
        $phonenumber = mysqli_real_escape_string($conn, $_POST['PhoneNo']);
-       $pass = md5($_POST['Password']);
-       $cpass = md5($_POST['ConfirmPassword']);
+       $pass = $_POST['Password'];
+       $cpass = $_POST['ConfirmPassword'];
        $user_type = $_POST['usertype'];
     
        $select = " SELECT * FROM user_info WHERE useremail = '$email' && password = '$pass' ";
@@ -24,9 +24,10 @@
              $error[] = 'password not matched!'; 	
 
           }else{
-             $insert = "INSERT INTO user_info(username, useremail, password, phonenumber, user_type) VALUES('$name','$email','$pass','$phonenumber','$user_type')";
-             mysqli_query($conn, $insert);
-             header('location:homepage.php');
+            $cryptpsd=hash('sha512',$pass);
+            $insert = "INSERT INTO user_info(username, useremail, password, phonenumber, user_type) VALUES('$name','$email','$cryptpsd','$phonenumber','$user_type')";
+            mysqli_query($conn, $insert);
+            header('location:homepage.php');
           }
        }
     
@@ -112,10 +113,9 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="usertype" class="form-label"></label>
-                                    <select name="usertype" id="usertype">
+                                    <select name="usertype" id="usertype" class="col-md-6">
                                         <option value="User">User</option>
                                         <option value="Therapist">Therapist</option>
-                                        <option value="Admin">Admin</option>
                                     </select>
                                 </div>
                                 <div class="tempest">

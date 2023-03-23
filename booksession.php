@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
     <!--font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
     <!--holds the landing page-->
@@ -59,78 +57,71 @@
                         </nav>
                     </div>
                 </header>
-            <!--CONTACT US BODY-->
-            <div class="container contact">
-                <div class="contactall">
-                    <div class="contactsection">
-                        <!--CONTAINS THE FORM-->
-                        <div class="contact-body mb-4">
-                            <!--Section heading-->
-                            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-                            <!--Section description-->
-                            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
-
-                            <div class="row row-content">
-                                <!--Grid column-->
-                                <div class="col-md-9 mb-md-0 mb-5">
-                                <?php if (isset($_GET['message'])) {?>
-		                                <div class="container">
-                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
-                                                <p><?php echo $_GET['message']; ?> </p>
-                                            </div>									    
-									    </div>
-								<?php } ?>
-                                    <form id="contact-form" action="contactform.php" method="POST">
-                                        <div class="row-yago">                            
-                                            <div class="col-md-12">
-                                                <div class="md-form mb-0">
-                                                    <label for="contact_name" class="xann">Your name</label>
-                                                    <input type="text" id="contact_name" name="contact_name" class="form-control"> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_email" class="xann">Your email</label>
-                                                    <input type="text" id="contact_email" name="contact_email" class="form-control">                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_message" class="xann">Your message</label>
-                                                    <textarea type="text" id="contact_message" name="contact_message" rows="2" class="form-control md-textarea"></textarea>                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center text-md-left col-md-5" id="contact-btn">
-                                            <button type="submit" class="btn" name="submit">Submit</button>
-                                            <!--onclick="document.getElementById('contact-form').submit();"-->
-                                        </div>
-                                    </form>
-                                </div>
-                                <!--Grid column-->
-
-                                <!--font awesome icons-->
-                                <div class="col-md-3 text-center">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fa-solid fa-location-dot fa-2x"></i>
-                                            <p>Le Mac, Westlands Nairobi, Kenya</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-phone mt-4 fa-2x"></i>
-                                            <p>0700 000 000</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-envelope mt-4 fa-2x"></i>
-                                            <p>mentihub@gmail.com</p>
-                                        </li>
-                                    </ul>
-                                </div>
+            <!--form-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well-block">
+                            <div class="well-title">
+                                <h2>Book an Appointment</h2>
                             </div>
-                            <!--Contact us form ends-->
+                            <form id="book-sess">
+                                <!-- Form start -->
+                                <div class="row">
+                                    <!--name input-->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="name">Name</label>
+                                            <div class="col-md-6">
+                                                <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Email input-->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="email">Email</label>
+                                            <div class="col-md-6">
+                                                <input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Date input-->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="date">Preferred Date</label>
+                                            <div class="col-md-6">
+                                                <input id="date" name="date" type="date" placeholder="Preferred Date" class="form-control col-md-6 input-md" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Select Basic -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="appoint-time">Preferred Time</label>
+                                            <div class="col-md-6">
+                                                <input type="time" id="appoint-time" name="appoint-time" class="form-control input-md col-md-6" required>
+                                                <!--<select id="appoint-time" name="time" class="form-control" required>
+                                                    <option value="8:00 to 9:00">8:00 to 9:00</option>
+                                                    <option value="9:00 to 10:00">9:15 to 10:15</option>
+                                                    <option value="10:00 to 1:00">10:30 to 11:30</option>
+                                                    <option value="14:00 to 15:00">14:00 to 15:00</option>
+                                                    <option value="15:00 to 16:00">15:00 to 16:00</option>
+                                                    <option value="16:00 to 17:00">16:00 to 17:00</option>
+                                                </select> -->
+                                            </div>
+                                            <!--<div class="col-md-6">
+                                                <input type="text" id="time" placeholder="Preferred Date" class="form-control input-md" required>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="col-md-12">                                        
+                                        <button id="singlebutton" name="singlebutton" class="btn appoint-btn">Make An Appointment</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- form end -->
                         </div>
                     </div>
                 </div>
@@ -186,3 +177,4 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

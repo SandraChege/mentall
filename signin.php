@@ -1,43 +1,4 @@
 <?php
-
-@include 'config.php';
-
-session_start();
-
-if(isset($_POST['submit'])){
-
-    $name = mysqli_real_escape_string($conn, $_POST['Username']);
-    $email = mysqli_real_escape_string($conn, $_POST['UserEmail']);
-    $phonenumber = mysqli_real_escape_string($conn, $_POST['PhoneNo']);
-    $pass = md5($_POST['Password']);
-    $cpass = md5($_POST['ConfirmPassword']);
-    $user_type = $_POST['usertype'];
-
-    $select = " SELECT * FROM user_info WHERE useremail = '$email' && password = '$pass' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:homepage.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['name'];
-         header('location:homepage.php');
-
-      }
-     
-   }else{
-      $error[] = 'incorrect email or password!';
-   }
-
-};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +42,7 @@ if(isset($_POST['submit'])){
             <!--holds the form-->
             <div class="container">
                 <div class="anil">
-                    <form action="" method="post" class="form-center">
+                    <form action="signinval.php" method="post" class="form-center">
                         <div class="kai">
                             <div class="sol">
                                 <p>
@@ -90,10 +51,13 @@ if(isset($_POST['submit'])){
                             </div>
                             <div class="zephyr">
                             <?php
-                                if(isset($error)){
-                                    foreach($error as $error){
-                                        echo '<span class="error-msg">'.$error.'</span>';
-                                    };
+                                if(isset($_GET['message'])){
+                                    ?>
+                                    <div class="container"> 
+									    <p class="error-msg"> 
+                                        <?php echo $_GET['message']; ?> </p>
+									</div>
+                                    <?php
                                 };
                             ?>
                                 <div class="mb-3">

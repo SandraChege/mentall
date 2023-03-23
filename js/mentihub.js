@@ -35,3 +35,4 @@ function newQuote(){
   var randonNumber = Math.floor(Math.random() * (quotes.length));
   document.getElementById('quoteDisplay').innerHTML = quotes[randonNumber];
 }
+

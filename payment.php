@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
     <!--font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
     <!--holds the landing page-->
@@ -59,81 +57,78 @@
                         </nav>
                     </div>
                 </header>
-            <!--CONTACT US BODY-->
-            <div class="container contact">
-                <div class="contactall">
-                    <div class="contactsection">
-                        <!--CONTAINS THE FORM-->
-                        <div class="contact-body mb-4">
-                            <!--Section heading-->
-                            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-                            <!--Section description-->
-                            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
-
-                            <div class="row row-content">
-                                <!--Grid column-->
-                                <div class="col-md-9 mb-md-0 mb-5">
-                                <?php if (isset($_GET['message'])) {?>
-		                                <div class="container">
-                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
-                                                <p><?php echo $_GET['message']; ?> </p>
-                                            </div>									    
-									    </div>
-								<?php } ?>
-                                    <form id="contact-form" action="contactform.php" method="POST">
-                                        <div class="row-yago">                            
-                                            <div class="col-md-12">
-                                                <div class="md-form mb-0">
-                                                    <label for="contact_name" class="xann">Your name</label>
-                                                    <input type="text" id="contact_name" name="contact_name" class="form-control"> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_email" class="xann">Your email</label>
-                                                    <input type="text" id="contact_email" name="contact_email" class="form-control">                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_message" class="xann">Your message</label>
-                                                    <textarea type="text" id="contact_message" name="contact_message" rows="2" class="form-control md-textarea"></textarea>                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center text-md-left col-md-5" id="contact-btn">
-                                            <button type="submit" class="btn" name="submit">Submit</button>
-                                            <!--onclick="document.getElementById('contact-form').submit();"-->
-                                        </div>
-                                    </form>
-                                </div>
-                                <!--Grid column-->
-
-                                <!--font awesome icons-->
-                                <div class="col-md-3 text-center">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fa-solid fa-location-dot fa-2x"></i>
-                                            <p>Le Mac, Westlands Nairobi, Kenya</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-phone mt-4 fa-2x"></i>
-                                            <p>0700 000 000</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-envelope mt-4 fa-2x"></i>
-                                            <p>mentihub@gmail.com</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Contact us form ends-->
-                        </div>
-                    </div>
-                </div>
+            <!--payment-->
+            <div class="container view-account">
+                <div class="content-panel">
+        			<h2 class="title">Billing</h2>
+        			<div class="billing">
+        				<div class="secure text-center margin-bottom-md">
+        					<div class="accepted-cards">
+        						<img src="images/visa.png" alt="Visa">
+        						<img src="images/mastercard.png" alt="MasterCard">
+        						<img src="images/paypal.jpg" alt="PayPal">
+        					</div>
+        				</div>
+        				<form id="billing" class="form-horizontal" method="post" action="#" role="form">
+        					<div class="form-group">
+        						<label for="card-name" class="col-sm-3 control-label">Name on Card</label>
+        						<div class="col-sm-9">
+        							<input type="text" class="form-control" id="card-name" placeholder="Your name" required>
+        							<p class="help-block">As it appears on the card</p>
+        						</div>
+        					</div>
+        					<div class="form-group">
+        						<label for="card-number" class="col-sm-3 control-label">Card Number </label>
+        						<div class="col-sm-9">
+        							<input type="text" id="card-number" class="form-control" placeholder="1234 5678 4356 7856" minlength="16" maxlength="16" required>
+        							<p class="help-block">The 16 digits on the front of your credit card.</p>
+        						</div>
+        					</div>
+        					<div class="form-group">
+        						<label class="col-sm-3 control-label" for="card-exp-date">Expiration Date</label>
+        						<div class="col-sm-9 form-inline">
+        							<!--<select class="form-control">
+        								<option value="01">01</option>
+        								<option value="01">02</option>
+        								<option value="01">03</option>
+        								<option value="01">04</option>
+        								<option value="01">05</option>
+        								<option value="01">06</option>
+        								<option value="01">07</option>
+        								<option value="01">08</option>
+        							</select>
+        							<span class="divider">/</span>
+        							<select class="form-control">
+        								<option value="01">2015</option>
+        								<option value="01">2016</option>
+        								<option value="01">2017</option>
+        								<option value="01">2018</option>
+        								<option value="01">2019</option>
+        								<option value="01">2020</option>
+        								<option value="01">2021</option>
+        								<option value="01">2022</option>
+        							</select>-->
+                                    <input type="month" id="card-exp-date" class="form-control" placeholder="MM/YYYY" required>
+        							<p class="help-block">The date your credit card expires. Find this on the front of your credit card.</p>
+        						</div>
+        					</div>
+        					<div class="form-group">
+        						<label class="col-sm-3 control-label">Security Code</label>
+        						<div class="col-sm-9">
+        							<input type="text" class="form-control" placeholder="CVC" minlength="3" maxlength="3" required>
+        							<p class="help-block">The last 3 digits displayed on the back of your credit card.</p>
+        						</div>
+        					</div>
+        					<div class="action-wrapper text-center">
+        						<div class="action-btn">
+        							<button class="btn btn-lg">
+        								<!--Pay $20 -->Confirm
+        							</button>
+        						</div>
+        					</div>
+        				</form>
+        			</div>
+        		</div>
             </div>
         </div>
     </div>
@@ -186,3 +181,4 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

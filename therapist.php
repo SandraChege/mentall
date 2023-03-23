@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
     <!--font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
     <!--holds the landing page-->
     <div class="container-fluid overflow-hidden">
         <div>
             <!--logo and navbar container-->
-                <header id="logo">
+            <header id="logo">
                     <div class="m-0">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <div class="container-fluid">
@@ -58,79 +57,74 @@
                             </div>
                         </nav>
                     </div>
-                </header>
-            <!--CONTACT US BODY-->
-            <div class="container contact">
-                <div class="contactall">
-                    <div class="contactsection">
-                        <!--CONTAINS THE FORM-->
-                        <div class="contact-body mb-4">
-                            <!--Section heading-->
-                            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-                            <!--Section description-->
-                            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
-
-                            <div class="row row-content">
-                                <!--Grid column-->
-                                <div class="col-md-9 mb-md-0 mb-5">
-                                <?php if (isset($_GET['message'])) {?>
-		                                <div class="container">
-                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
-                                                <p><?php echo $_GET['message']; ?> </p>
-                                            </div>									    
-									    </div>
-								<?php } ?>
-                                    <form id="contact-form" action="contactform.php" method="POST">
-                                        <div class="row-yago">                            
-                                            <div class="col-md-12">
-                                                <div class="md-form mb-0">
-                                                    <label for="contact_name" class="xann">Your name</label>
-                                                    <input type="text" id="contact_name" name="contact_name" class="form-control"> 
-                                                </div>
-                                            </div>
+            </header>
+            <div class="container cont-small">
+                <div>
+                    <!--BACKGROUND IMAGE-->
+                    <div class=" bg-image d-flex justify-content-center align-items-center" style="background-image:url('images/therapybackimage2.jpg'); height: 50vh;">
+                        <div class="mask d-flex justify-content-center align-items-center" style="background-color: hsla(0, 0%, 0%, 0.6); height: 100%; width: 100%;">
+                            <div>
+                                <h2 style="color: #EAEDE7; font-size: 30px; font-family: poppins;">
+                                    How does mentihub work?
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    </div>    
+                    <!--CONTENT-->
+                    <div class="row mt-3">
+                        <div class="cards-body">
+                            <!--card one-->
+                            <div class="col">
+                                <div class="info-obj img-l g0 small animated fadeInUp" data-animate-in="fadeInUp|0.1" style="animation-delay: 0.1s;">
+                                    <div class="img">
+                                        <span class="txt-white bg-default iconwrp sq mr-t-20 f-2">01</span>
+                                    </div>
+                                    <div class="info pd-tiny shadow-mini" data-rgen-sm="pd-20 medium">
+                                        <!--sq60: This class sets the width and height of the span element to 60 pixels, making it a square. fs50: This class sets the font size of any text inside the span element to 50 pixels. mr-b-micro: This class adds a small amount of margin to the bottom of the span element.-->
+                                        <span class="iconbox sq60 fs50 mr-b-micro"><i class="fa-regular fa-circle-check fa-2xl" style="color: #000000;"></i></span>
+                                        <h3 class="title small">Pick a therapist</h3>
+                                        <p class="mr-0">Choose a therapist you would like to connect with.</p>
+                                        <div>
+                                            <a href="#" class="btn"> Choose therapist</a>
                                         </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_email" class="xann">Your email</label>
-                                                    <input type="text" id="contact_email" name="contact_email" class="form-control">                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-yago">
-                                            <div class="col-md-12">
-                                                <div class="md-form mt-4">
-                                                    <label for="contact_message" class="xann">Your message</label>
-                                                    <textarea type="text" id="contact_message" name="contact_message" rows="2" class="form-control md-textarea"></textarea>                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center text-md-left col-md-5" id="contact-btn">
-                                            <button type="submit" class="btn" name="submit">Submit</button>
-                                            <!--onclick="document.getElementById('contact-form').submit();"-->
-                                        </div>
-                                    </form>
-                                </div>
-                                <!--Grid column-->
-
-                                <!--font awesome icons-->
-                                <div class="col-md-3 text-center">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><i class="fa-solid fa-location-dot fa-2x"></i>
-                                            <p>Le Mac, Westlands Nairobi, Kenya</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-phone mt-4 fa-2x"></i>
-                                            <p>0700 000 000</p>
-                                        </li>
-
-                                        <li><i class="fa-solid fa-envelope mt-4 fa-2x"></i>
-                                            <p>mentihub@gmail.com</p>
-                                        </li>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <!--Contact us form ends-->
+                            <div class="col">
+                                <!--card two-->
+                                <div class="info-obj img-l g0 small animated fadeInUp" data-animate-in="fadeInUp|0.1" style="animation-delay: 0.1s;">
+                                    <div class="img">
+                                        <span class="txt-white bg-default iconwrp sq mr-t-20 f-2">02</span>
+                                    </div>
+                                    <div class="info pd-tiny shadow-mini" data-rgen-sm="pd-20 medium">
+                                        <!--sq60: This class sets the width and height of the span element to 60 pixels, making it a square. fs50: This class sets the font size of any text inside the span element to 50 pixels. mr-b-micro: This class adds a small amount of margin to the bottom of the span element.-->
+                                        <span class="iconbox sq60 fs50 mr-b-micro"><i class="fa-regular fa-clock fa-2xl" style="color: #000000;"></i></span>
+                                        <h3 class="title small">Book Quickly</h3>
+                                        <p class="mr-0">Make a quick booking for a counselling session</p>
+                                        <div>
+                                            <a href="booksession.php" class="btn">Book now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!--card three-->
+                                <div class="info-obj img-l g0 small animated fadeInUp" data-animate-in="fadeInUp|0.1" style="animation-delay: 0.1s;">
+                                    <div class="img">
+                                        <span class="txt-white bg-default iconwrp sq mr-t-20 f-2">03</span>
+                                    </div>
+                                    <div class="info pd-tiny shadow-mini" data-rgen-sm="pd-20 medium">
+                                        <!--sq60: This class sets the width and height of the span element to 60 pixels, making it a square. fs50: This class sets the font size of any text inside the span element to 50 pixels. mr-b-micro: This class adds a small amount of margin to the bottom of the span element.-->
+                                        <span class="iconbox sq60 fs50 mr-b-micro"><i class="fa-regular fa-messages fa-2xl" style="color: #000000;"></i></span>
+                                        <h3 class="title small">Mental tips</h3>
+                                        <p class="mr-0">Mental tips improve mental health and overall well-being.</p>
+                                        <div>
+                                            <a href="tipsgenerator.php" class="btn">Generate tip</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,5 +178,8 @@
     <script src="js/mentihub.js"></script>
     <!--font awesome kit-->
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
+    
 </body>
 </html>
+    
+    

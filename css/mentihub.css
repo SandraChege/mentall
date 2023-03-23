@@ -20,6 +20,29 @@
     font-size: 20px;
     padding: 10px;
 }
+.dropdown-menu{
+    padding: 5px;
+    z-index: 1;
+    background-color: var(--lightgreen);
+}
+  
+.dropdown-menu a {
+    color: black;
+    text-align: left;
+    padding: 10px;
+    
+} 
+.dropdown-menu a:hover {
+    background-color: red;
+}
+  
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+  
+.dropdown-menu li a:hover {
+    background-color: pink;
+}
 /*LANDING PAGE*/
 .intro{
     margin-left: 20px;
@@ -59,6 +82,9 @@
     border: 1px solid var(--darkgreen);
     color: var(--textcolor);
 }
+#usertype{
+    border: 1px solid black;
+}
 /*SIGN UP*/
 .container .anil form .error-msg{
     margin: 10px 0;
@@ -67,9 +93,6 @@
     color: var(--textcolor);
     padding: 10px;
     border-radius: 5px;
-}
-#usertype{
-background-color: var(--darkgreen);
 }
 /*SIGNIN PAGE*/
 .form-center{
@@ -89,7 +112,7 @@ background-color: var(--darkgreen);
 .zephyr .mb-3 label{
     font-weight: 450;
 }
-.zephyr .mb-3 input{
+.zephyr .mb-3 input, .zephyr .mb-3 select{
     max-width: 600px;
     padding: 8px 20px;
     box-sizing: border-box;
@@ -177,10 +200,6 @@ background-color: var(--darkgreen);
 #book-sess{
     margin-top: 10px;
 }
-.form-group #appoint-time{
-    border: 1px solid black;
-    margin: 8px auto;
-}
 #singlebutton{
     background-color: var(--darkgreen);
     padding: 10px;
@@ -230,6 +249,98 @@ background-color: var(--darkgreen);
     color: var(--textcolor);
     padding: 10px 20px;
 }
+/*THERAPIST*/
+.bg-image .mask h2{
+    color: var(--textcolor);
+    font-size: 20px;
+    font-family: var(--montserrat);
+}
+/* Card styles */
+.info-obj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+  
+.info-obj .img {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: var(--greengreen);
+    padding: 15px;/*remove this*/
+    overflow: hidden;
+}
+  
+.info-obj .img .txt-white {
+    position: center;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+  
+.info-obj .info {
+    width: 50%;
+    margin: 0%;
+    padding: 20px;
+    border: 1px solid var(--textcolor);
+    border-radius: 10px;
+    background-color: var(--textcolor);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 1);/*horizontal offset of 0, vertical off set of 3px, blur radius of 4px*/
+}
+  
+.info-obj .info .fa-regular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    /*position: relative;
+    z-index: 1;*/
+}
+  
+.info-obj .info .title {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.info-obj .info p {
+    padding: auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-obj .info .btn{
+    background-color: var(--greengreen);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+  /* Animation styles */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+  
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+  
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+}
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+}  
 /*TIPS GENERATOR*/
 .tips-body{
     margin: 10px 0;
@@ -323,6 +434,44 @@ button:active {
     border: 1px solid var(--darkgreen);
     border-radius: 5px;
     color: var(--textcolor);
+}
+/*quiz*/
+.container .quiz-home-content{
+    line-height: 1.8;
+    word-spacing: 1.2;
+}
+.general-tests a{
+    width: 280px;
+    padding: 23px 10px;
+    color: var(--textcolor);
+    background-color: var(--darkgreen);
+    font-family: inter;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: .01em;
+    text-decoration: none;
+    margin: 30px 10px 20px;
+    border-radius: 8px;
+    transition: .2s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+/*depresion test*/
+.container .depres-test .question fieldset{
+    margin: 20px;
+    padding: 10px;
+}
+.container .depres-test .question fieldset legend{
+    font-size: 16px;
+}
+.container .depres-test .question input[type=submit]{
+    padding: 10px 50px;
+    margin: 10px auto 10px 30px;
+    background-color: var(--darkgreen);
+    color: var(--textcolor);
+    border-radius: 5px;
+    font-size: 20px;
 }
 /*FOOTER*/
 footer{

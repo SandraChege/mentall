@@ -62,9 +62,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6"><!--bg-image" style="background-image:url('images/Mental2.jpg'); height: 75vh;"-->
                         <div>
-                            <img src="images/Mental.jpg" class="img-fluid landimage" alt="A picture of people holding hamds to show support for one another">
+                           <img src="images/Mental.jpg" class="img-fluid landimage" alt="A picture of people holding hamds to show support for one another">
                         </div>
                     </div>
                 </div>
