@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include 'config/config.php';
 
 session_start();
 
@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
         $_SESSION['id'] = $row['user_id'];
         $_SESSION['therapist_name'] = $row['username'];
-        header('location:therapisthome.php');
+        header('location:therapistshome.php');
 
       }elseif($row['user_type'] == 'User'){
 

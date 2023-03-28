@@ -110,31 +110,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-<!--
-    < Avatar 
-    <div class="dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="images/avatar.png" class="rounded-circle me-2" width="32" height="32" alt="Profile picture">
-            <span class="d-none d-sm-inline">Your Name</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-end prof-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: red;">
-            <ul>
-                <li>
-                    <a class="dropdown-item" href="#">My profile</a> 
-                </li>        
-                <li>
-                    <a class="dropdown-item" href="#">Settings</a> 
-                </li>                                           
-                <li>
-                    <a class="dropdown-item" href="#">Logout</a> 
-                </li>                                                                              
-            </ul>
-        </div>
-    </div>
--->
-

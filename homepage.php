@@ -90,7 +90,7 @@
                                     It is essential to acknowledge that we all have mental health issues and that it is our personal responsibility to learn how to improve and maintain our well-being in order to live meaningful and satisfying lives. Do you want to know how to do this?
                                 </p>
                                 <div>
-                                    <a href="diseases.html" class="btn kailani"> Click here and learn more</a>
+                                    <a href="diseases.php" class="btn kailani"> Click here and learn more</a>
                                 </div>
                             </div>
                             <div class="wayra souta"></div>

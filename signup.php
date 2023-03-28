@@ -1,5 +1,5 @@
 <?php
-    @include 'config.php';
+    @include 'config/config.php';
 
     if(isset($_POST['submit'])){
     
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="InputPhoneNumber" class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control" id="InputPhoneNumber" name="PhoneNo" placeholder="Enter your Phone number" required>
+                                    <input type="number" class="form-control" id="InputPhoneNumber" name="PhoneNo" placeholder="Enter your Phone number" maxlenght="15" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="InputPassword" class="form-label">Password</label>

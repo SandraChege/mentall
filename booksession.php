@@ -1,3 +1,4 @@
+<?php?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +65,7 @@
                             <div class="well-title">
                                 <h2>Book an Appointment</h2>
                             </div>
-                            <form id="book-sess">
+                            <form id="book-sess" action="booksessiondb.php" method="POST">
                                 <!-- Form start -->
                                 <div class="row">
                                     <!--name input-->
