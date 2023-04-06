@@ -1,15 +1,14 @@
 <?php
-
-    // Include the PHPMailer library
-    require_once('path/to/PHPMailerAutoload.php');
-
-    //connect to database
-    include "config.php"
-
     session_start();
 
+    // Include the PHPMailer library
+    //require_once('phpmailer/vendor/PHPMailerAutoload.php');
+
+    // Connect to the database
+    include "config/config.php";
+
     // Process the form data
-    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['date']) && isset($_POST['appoint-time'])) {
+    if(isset($_POST['singlebutton'])) {
 
         // Sanitize input data to prevent SQL injection
         $name = $conn->real_escape_string($_POST['name']);
@@ -18,42 +17,26 @@
         $time = $conn->real_escape_string($_POST['appoint-time']);
 
         // Insert the data into the database
-        $sql = "INSERT INTO appointments (name, email, date, time) VALUES ('$name', '$email', '$date', '$time')";
-        if ($conn->query($sql) === TRUE) {
-
-            // Send confirmation email using PHPMailer
-            $mail = new PHPMailer;
-
-            // Set the SMTP settings
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'your_gmail_username';
-            $mail->Password = 'your_gmail_password';
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
-
-            // Set the email content
-            $mail->setFrom('your_gmail_username@gmail.com', 'Your Name');
-            $mail->addAddress($email, $name);
-            $mail->isHTML(true);
-            $mail->Subject = 'Appointment Confirmation';
-            $mail->Body    = 'Hello ' . $name . ',<br><br>Your appointment has been booked for ' . $date . ' at ' . $time . '.<br><br>Thank you for choosing us!';
-
-            // Send the email
-            if(!$mail->send()) {
-                echo 'Message could not be sent.';
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo 'Message has been sent';
+        $insert = "INSERT INTO appointments (user_name, user_email, date, time) VALUES ('$name', '$email', '$date', '$time')";
+        $result = mysqli_query($conn, $insert);
+        if($result){
+                header("Location: booksession.php?message=You have successfully booked an appointment");
+            }else {
+                header("Location: booksession.php?message=Your submission is unsuccessful.  Please try again");    
             }
 
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+        //header('location:homepage.php');
 
         // Close the database connection
-        $conn->close();
+        //$conn->close();
+
+        
+
+        // Close statement and connection
+        //$stmt->close();
+
+        //$conn->close();
+        //header("Location: booksession.php?message=You have successfully booked an appointment");
 
     }
 ?>

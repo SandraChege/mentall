@@ -42,6 +42,13 @@
             <!--holds the form-->
             <div class="container">
                 <div class="anil">
+                <?php if(isset($_GET['message'])) {?>
+		                                <div class="container">
+                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
+                                                <p><?php echo $_GET['message']; ?> </p>
+                                            </div>									    
+									    </div>
+								<?php } ?>
                     <form action="signinval.php" method="post" class="form-center">
                         <div class="kai">
                             <div class="sol">
@@ -50,16 +57,6 @@
                                 </p>
                             </div>
                             <div class="zephyr">
-                            <?php
-                                if(isset($_GET['message'])){
-                                    ?>
-                                    <div class="container"> 
-									    <p class="error-msg"> 
-                                        <?php echo $_GET['message']; ?> </p>
-									</div>
-                                    <?php
-                                };
-                            ?>
                                 <div class="mb-3">
                                     <label for="InputEmail1" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="InputEmail1" name= "UserEmail" required>

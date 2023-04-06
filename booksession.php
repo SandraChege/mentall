@@ -65,6 +65,13 @@
                             <div class="well-title">
                                 <h2>Book an Appointment</h2>
                             </div>
+                            <?php
+                                if(isset($error)){
+                                    foreach($error as $error){
+                                        echo '<span class="error-msg">'.$error.'</span>';
+                                    };
+                                };
+                            ?>
                             <form id="book-sess" action="booksessiondb.php" method="POST">
                                 <!-- Form start -->
                                 <div class="row">
@@ -101,18 +108,7 @@
                                             <label class="control-label" for="appoint-time">Preferred Time</label>
                                             <div class="col-md-6">
                                                 <input type="time" id="appoint-time" name="appoint-time" class="form-control input-md col-md-6" required>
-                                                <!--<select id="appoint-time" name="time" class="form-control" required>
-                                                    <option value="8:00 to 9:00">8:00 to 9:00</option>
-                                                    <option value="9:00 to 10:00">9:15 to 10:15</option>
-                                                    <option value="10:00 to 1:00">10:30 to 11:30</option>
-                                                    <option value="14:00 to 15:00">14:00 to 15:00</option>
-                                                    <option value="15:00 to 16:00">15:00 to 16:00</option>
-                                                    <option value="16:00 to 17:00">16:00 to 17:00</option>
-                                                </select> -->
                                             </div>
-                                            <!--<div class="col-md-6">
-                                                <input type="text" id="time" placeholder="Preferred Date" class="form-control input-md" required>
-                                            </div>-->
                                         </div>
                                     </div>
                                     <!-- Button -->

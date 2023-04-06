@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['id']) && isset($_SESSION['name'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +25,7 @@
                 <ul>
                     <div><li class="logo"><img src="images/Logo.png"><span class=""><br>Mentihub</span></li></div><!--<li><a href="#" class="logo"><img src="images/Logo.png"><br><span class="nav-item">Mentihub</span></a></li>-->
                     <li><a href="#"><i class="fa-solid fa-house"></i><span class="nav-item">Home</span> </a></li>
-                    <li><a href="#"><i class="fa-solid fa-users"></i><span class="nav-item">View users</span></a></li>
-                    <li><a href="#"><i class="fa-solid fa-user-doctor"></i></i><span class="nav-item">View therapists</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-users"></i><span class="nav-item">Users</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-calendar-check"></i><span class="nav-item">Appointments</span> </a></li>
                     <li><a href="#"><i class="fa-solid fa-people-group"></i><span class="nav-item">Care team</span> </a></li>
                     <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a></li>
@@ -34,7 +37,18 @@
                 </ul>
             </nav>
         </header>
+        <div class="therapist-container">
+            <div class="welcome">
+                <p>
+                    Welcome <?php echo "admin"; ?>
+                </p>
+            </div>
+        </div>
     </div>
-    
 </body>
 </html>
+<?php
+}else{
+    echo 'no session';
+}
+?>

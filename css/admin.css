@@ -119,6 +119,9 @@ a:focus i:not(.logout){
 .icons a {
     margin: 0.5rem;
 }
-/*.container{
+.therapist-container{
     display: flex;
-}*/
+    justify-content:right;
+    align-items:right;
+
+}
