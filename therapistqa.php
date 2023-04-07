@@ -299,7 +299,7 @@
                                 <label class="form-check-label" for="">5-Very satisfied</label>
                             </div>
                         </div>
-                        <button type="submit" name="submit" class="btn">Submit</button>
+                        <button type="submit" name="submit">Submit</button>
                         <!--QNS END HERE-->
                     </form>
                 </div>

@@ -1,24 +1,24 @@
 <?php
 include 'config/config.php';
-echo"hey";
 
 session_start();
-echo "hat";
+
 
 if(isset($_POST['submit'])){
-    // Retrieve answers from the form
-    $emotions = $_POST['emotions'];
-    $sadness = $_POST['sadness'];
-    $worry = $_POST['worry'];
-    $interest = $_POST['interest'];
-    $intrusive = $_POST['intrusive'];
-    $decision = $_POST['decision'];
-    $agitated = $_POST['agitated'];
-    $physical = $_POST['physical'];
-    $sleep = $_POST['sleep'];
-    $life = $_POST['life'];
-
-
+    $answers = array(
+        // Retrieve answers from the form
+        $emotions = $_POST['emotions'],
+        $sadness = $_POST['sadness'],
+        $worry = $_POST['worry'],
+        $interest = $_POST['interest'],
+        $intrusive = $_POST['intrusive'],
+        $decision = $_POST['decision'],
+        $agitated = $_POST['agitated'],
+        $physical = $_POST['physical'],
+        $sleep = $_POST['sleep'],
+        $life = $_POST['life']
+    );
+    
 
     // Define score mapping
     $scoreMapping = array(
@@ -53,11 +53,20 @@ if(isset($_POST['submit'])){
         "Very satisfied" => 5,
         "No difficulty" => 5,
         "No struggle" => 5,
-        "Very good" => 4,
+        "Very good" => 5
     );
-    // Calculate total score
+
+    // Calculate the total score based on the answers
     $totalScore = 0;
-    $totalScore = $scoreMapping[$emotions] + $scoreMapping[$sadness] + $scoreMapping[$worry] + $scoreMapping[$interest] + $scoreMapping[$intrusive] + $scoreMapping[$decision] + $scoreMapping[$agitated] + $scoreMapping[$physical] + $scoreMapping[$life] + $scoreMapping[$sleep];
+    foreach ($answers as $question => $answer) {
+        if (isset($scoreMapping[$answer])) {
+            // Convert the answer to its corresponding score (1 to 5)
+            $score = $labels[$answer];
+            $totalScore += $score;
+        }
+
+    }
+    echo $totalScore;
 
     // Assign patient to a doctor based on total score
     $doctor = "";
