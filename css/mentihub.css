@@ -11,6 +11,9 @@
     --cloudburst: #1F2F4F;
     --lightgreen: #ebfaf4;
 }
+*{
+    font-family: var(--roboto);
+}
 /*HEADER*/
 #logo{
     background-color: var(--lightgreen);
@@ -173,6 +176,21 @@
     flex-direction: column;
 }
 /*BOOK A THERAPIST*/
+#Qatherapist-form{
+    background-color: rgba(255, 252, 246, 0.3);/*CHANGE OPACITY LEVEL*/
+    box-sizing: border-box;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /*margin: 10px auto; */ 
+    font-family: var(--roboto);
+    /*height: 80vh;*/
+}
+#Qatherapist-form form .question-container{
+    margin: 0;
+    padding: 8px;
+}
 /*MENTAL HEALTH QUIZ*/
 
 /*BOOK A SESSION*/
@@ -239,11 +257,17 @@
     font-family: var(--montserrat);
 }
 /* Card styles */
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
 .info-obj {
     display: flex;
+    /*flex: 1;*/
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+    height: 100%;
 }
   
 .info-obj .img {

@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
   }
      
 }else{
-  $error[] ='incorrect email or password!';
+  $error[] ='incorrect password!';
   header("location:signin.php?message='Incorrect email or password'");
   }
 ?>

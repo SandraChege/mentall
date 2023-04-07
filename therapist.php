@@ -72,7 +72,7 @@
                     </div>    
                     <!--CONTENT-->
                     <div class="row mt-3">
-                        <div class="cards-body">
+                        <div class="cards-body"><!--add this to ensure they are on one row: d-flex justify-content-between-->
                             <!--card one-->
                             <div class="col">
                                 <div class="info-obj img-l g0 small animated fadeInUp" data-animate-in="fadeInUp|0.1" style="animation-delay: 0.1s;">
@@ -85,7 +85,7 @@
                                         <h3 class="title small">Pick a therapist</h3>
                                         <p class="mr-0">Choose a therapist you would like to connect with.</p>
                                         <div>
-                                            <a href="#" class="btn"> Choose therapist</a>
+                                            <a href="therapistqa.php" class="btn"> Choose therapist</a>
                                         </div>
                                     </div>
                                 </div>
