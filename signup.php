@@ -33,7 +33,7 @@
             $cryptpsd=hash('sha512',$pass);
 
             if($usertype === "Therapist"){
-                $insert = "INSERT INTO therapist_info(therapist_name, Phone_No, email, Password) VALUES ('$name', '$phonenumber', '$email', '$cryptpsd')";
+                $insert = "INSERT INTO therapist_info(therapist_name, Phone_No, email, Password, doctor_type, doc_disease, doc_qualifications) VALUES ('$name', '$phonenumber', '$email', '$cryptpsd', 'undefined', 'undefined', 'undefined')";
             }
             if($usertype === "Client"){
                 $insert = "INSERT INTO client_info(client_name, Phone_No, email, Password) VALUES ('$name', '$phonenumber', '$email', '$cryptpsd')";

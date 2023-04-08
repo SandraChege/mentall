@@ -85,7 +85,7 @@
                                         <h3 class="title small">Pick a therapist</h3>
                                         <p class="mr-0">Choose a therapist you would like to connect with.</p>
                                         <div>
-                                            <a href="therapistqa.php" class="btn"> Choose therapist</a>
+                                            <a href="clientchoosetherapist.php" class="btn"> Choose therapist</a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                         <h3 class="title small">Book Quickly</h3>
                                         <p class="mr-0">Make a quick booking for a counselling session</p>
                                         <div>
-                                            <a href="booksession.php" class="btn">Book now</a>
+                                            <a href="clientbooksession.php" class="btn">Book now</a>
                                         </div>
                                     </div>
                                 </div>

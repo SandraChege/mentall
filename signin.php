@@ -48,7 +48,7 @@
                                                 <p><?php echo $_GET['message']; ?> </p>
                                             </div>									    
 									    </div>
-								<?php } ?>
+								<?php }?>
                     <form action="signinval.php" method="post" class="form-center">
                         <div class="kai">
                             <div class="sol">

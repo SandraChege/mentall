@@ -1,6 +1,15 @@
 <?php
 session_start();
+include 'config/config.php';
 if(isset($_SESSION['id']) && isset($_SESSION['name'])){
+    $id=$_SESSION['id'];
+    $qualification_check = "SELECT `doc_qualifications`FROM therapist_info WHERE therapist_id = '$id';"; 
+    $result_qualification_check = mysqli_query($conn, $qualification_check);
+    $row = mysqli_fetch_assoc($result_qualification_check);
+    $qualification = $row['doc_qualifications'];
+    if ($qualification == "undefined"){
+        header(("location:therapistqualification.php"));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +48,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
         </header>
         <div class="therapist-container">
             <div class="welcome">
+            <?php if(isset($_GET['message'])) {?>
+		                                <div class="container">
+                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
+                                                <p><?php echo $_GET['message']; ?> </p>
+                                            </div>									    
+									    </div>
+								<?php }?>
                 <p>
                     Welcome <?php echo $_SESSION['name'];?>
                 </p>
