@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) == 0){
-    header("location:adminsignin.php?message=user doesn't exist");
+    header("location:adminsignin.php?message=Incorrect password or email");
   }
 
   if(mysqli_num_rows($result) == 1)  {

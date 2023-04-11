@@ -1,4 +1,8 @@
-<?php?>
+<?php
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['name'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,18 +76,25 @@
                                     };
                                 };
                             ?>
+                            <?php if(isset($_GET['message'])) {?>
+		                                <div class="container">
+                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
+                                                <p><?php echo $_GET['message']; ?> </p>
+                                            </div>									    
+									    </div>
+								<?php }?>
                             <form id="book-sess" action="clientbooksessiondb.php" method="POST">
                                 <!-- Form start -->
                                 <div class="row">
                                     <!--name input-->
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label" for="name">Name</label>
                                             <div class="col-md-6">
                                                 <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- Email input-->
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -112,7 +123,7 @@
                                         </div>
                                     </div>
                                     <!-- Button -->
-                                    <div class="col-md-12">                                        
+                                    <div class="col-md-12" style= "margin-bottom: 15px;">                                        
                                         <button id="singlebutton" name="singlebutton" class="btn appoint-btn">Make An Appointment</button>
                                     </div>
                                 </div>
@@ -173,4 +184,10 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+}else{
+    header("location:signin.php?message=Please sign in");
+}
+?>
+
 

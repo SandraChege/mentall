@@ -25,7 +25,7 @@ nav{
     position: sticky;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    /*height: 100vh;*/
     left: 0;
     width: 90px;
     /* width: 280px; */
@@ -99,12 +99,11 @@ a:focus:not(.logout){
 a:focus i:not(.logout){
     color: var(--textcolor);
 }
-/*.logout{
+.logout{
     position: absolute;
     bottom: 0;
-} 
-*/ 
-.sidebar-footer{
+}
+/*.sidebar-footer{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -118,10 +117,21 @@ a:focus i:not(.logout){
 }
 .icons a {
     margin: 0.5rem;
-}
-.therapist-container{
+}*/
+/*.therapist-pending{
     display: flex;
     justify-content:right;
     align-items:right;
-
+}*/
+.therapist-pending{
+    position: relative;
+    padding: 20px;
+    width: 100%;    
 }
+/*.therapist-pending{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    width: 100%;    
+}*/

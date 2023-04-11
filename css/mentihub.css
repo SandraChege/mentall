@@ -403,6 +403,45 @@ button:active {
       font-size: 2.5rem;
     }
 }
+/*CLIENT SESSIONS*/
+#my-session{
+    padding: 10px;
+    margin: 10px;
+}
+#my-session #sess a{
+    background-color: var(--darkgreen);
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+    color: var(--textcolor);
+}
+#my-session #sess a:hover{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: var(--textcolor);
+    text-decoration: none;
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+}
+#my-session #sess a:focus{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: var(--textcolor);
+    text-decoration: none;
+    padding: 15px;
+    margin: 20px;
+    font-size: 20px;
+}
+.table-responsive thead{
+    border: 1px solid #000;
+}
+.table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+.table-responsive tr {
+    border-bottom: 1px solid #000;
+  }
 /*CONTACT US PAGE*/
 .contactsection .list-unstyled .fa-solid{
     color: var(--deepteal);

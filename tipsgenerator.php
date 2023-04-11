@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,4 +122,6 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+
 

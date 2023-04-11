@@ -74,6 +74,5 @@
                 header("location:therapistqualification.php?message=Your documents are not submitted. Please try again");
             }
         }    
-    }  
-    
+    }
 ?>
