@@ -1,4 +1,7 @@
 <?php
+    session_start();
+
+    if(isset($_SESSION['id']) && isset($_SESSION['name'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,18 +73,25 @@
         						<img src="images/paypal.jpg" alt="PayPal">
         					</div>
         				</div>
-        				<form id="billing" class="form-horizontal" method="post" action="#" role="form">
+                        <?php if(isset($_GET['message'])) {?>
+		                                <div class="container">
+                                            <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
+                                                <p><?php echo $_GET['message']; ?> </p>
+                                            </div>									    
+									    </div>
+								<?php }?>
+        				<form id="billing" class="form-horizontal" method="post" action="billingdb.php" role="form">
         					<div class="form-group">
         						<label for="card-name" class="col-sm-3 control-label">Name on Card</label>
         						<div class="col-sm-9">
-        							<input type="text" class="form-control" id="card-name" placeholder="Your name" required>
+        							<input type="text" name= "name"  class="form-control" id="card-name" placeholder="Your name" required>
         							<p class="help-block">As it appears on the card</p>
         						</div>
         					</div>
         					<div class="form-group">
         						<label for="card-number" class="col-sm-3 control-label">Card Number </label>
         						<div class="col-sm-9">
-        							<input type="text" id="card-number" class="form-control" placeholder="1234 5678 4356 7856" minlength="16" maxlength="16" required>
+        							<input type="text" name= "card_number" id="card-number" class="form-control" placeholder="1234 5678 4356 7856" minlength="16" maxlength="16" required>
         							<p class="help-block">The 16 digits on the front of your credit card.</p>
         						</div>
         					</div>
@@ -109,21 +119,21 @@
         								<option value="01">2021</option>
         								<option value="01">2022</option>
         							</select>-->
-                                    <input type="month" id="card-exp-date" class="form-control" placeholder="MM/YYYY" required>
+                                    <input type="month" name= "expmonth"  id="card-exp-date" class="form-control" placeholder="MM/YYYY" required>
         							<p class="help-block">The date your credit card expires. Find this on the front of your credit card.</p>
         						</div>
         					</div>
         					<div class="form-group">
         						<label class="col-sm-3 control-label">Security Code</label>
         						<div class="col-sm-9">
-        							<input type="text" class="form-control" placeholder="CVC" minlength="3" maxlength="3" required>
+        							<input type="text" name= "cvc" class="form-control" placeholder="CVC" minlength="3" maxlength="3" required>
         							<p class="help-block">The last 3 digits displayed on the back of your credit card.</p>
         						</div>
         					</div>
         					<div class="action-wrapper text-center">
         						<div class="action-btn">
-        							<button class="btn btn-lg">
-        								<!--Pay $20 -->Confirm
+        							<button class="btn " name = "submit">
+        								<!--Pay $20 -->Confirm Payment
         							</button>
         						</div>
         					</div>
@@ -182,4 +192,9 @@
     <script src="https://kit.fontawesome.com/c2761d2df3.js" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+}else{
+    header("location:signin.php?message=Please sign in");
+}
+?>
 

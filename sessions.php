@@ -69,7 +69,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Email</th>
+                                        <!--<th scope="col">Email</th>-->
                                         <th scope="col">Time</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Status</th>
@@ -87,7 +87,7 @@
                                     ?>
                                         <tr>
                                             <td><?php echo $i;?></td>
-                                            <td><?php echo $row['user_email'];?></td>
+                                            <!--<td><?php//echo $row['user_email'];?></td>-->
                                             <td><?php echo $row['date'];?></td>
                                             <td><?php echo $row['time'];?></td>
                                             <td ><?php echo $row['status'];?></td>

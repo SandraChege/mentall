@@ -226,21 +226,21 @@
                                 </div>
                                 <!--ROW 4-->
                                 <div class="row aukai mb-4 gy-4">                                                                       
-                                <!--DISSOCIATIVE-->
-                                <div class="col-md-4 hema kahawai">
-                                    <div class="keawe">
-                                        <div class="card h-100">
-                                            <div class="card-img-top">
-                                                <img src="images/dissociation.jpg" alt="" height="30%" width="100%">
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Dissociation And Dissociative Disorders</h5>
-                                                <p class="card-text">Dissociation is a mental process that causes a lack of connection in a person’s thoughts, memory and sense of identity.</p> <br>
-                                                <a href="dissociation.html" class="nahele btn">Learn more</a>
+                                    <!--DISSOCIATIVE-->
+                                    <div class="col-md-4 hema kahawai">
+                                        <div class="keawe">
+                                            <div class="card h-100">
+                                                <div class="card-img-top">
+                                                    <img src="images/dissociation.jpg" alt="" height="30%" width="100%">
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Dissociation And Dissociative Disorders</h5>
+                                                    <p class="card-text">Dissociation is a mental process that causes a lack of connection in a person’s thoughts, memory and sense of identity.</p> <br>
+                                                    <a href="dissociation.html" class="nahele btn">Learn more</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> 
+                                    </div> 
                                  <!--Eating disorder-->
                                     <div class="col-md-4 hema kahawai">
                                         <div class="keawe">
@@ -261,17 +261,16 @@
                                         <div class="keawe">
                                             <div class="card h-100">
                                                 <div class="card-img-top">
-                                                    <img src="images/eating.png" alt="" height="30%" width="100%">
+                                                    <img src="images/gad1.jpg" alt="" height="30%" width="100%">
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Generalized anxiexty disorder</h5>
                                                     <p class="card-text">Eating disorders are a range of psychological conditions that cause unhealthy eating habits to develop. They might start with an obsession with food, body weight, or body shape</p>
-                                                    <a href="#" class="nahele btn">Learn more</a>
+                                                    <a href="gad.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> 
-                                </div>
                                 </div>                                
                                 <!--ROW 5-->
                                 <div class="row aukai mb-4 gy-4">

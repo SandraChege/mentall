@@ -96,14 +96,14 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                                         </div>
                                     </div>-->
                                     <!-- Email input-->
-                                    <div class="col-md-12">
+                                    <!--<div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label" for="email">Email</label>
                                             <div class="col-md-6">
                                                 <input id="email" name="email" type="email" placeholder="E-Mail" class="form-control input-md" required>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- Date input-->
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -123,7 +123,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                                         </div>
                                     </div>
                                     <!-- Button -->
-                                    <div class="col-md-12" style= "margin-bottom: 15px;">                                        
+                                    <div class="col-md-12" style= "margin-bottom: 96px;">                                        
                                         <button id="singlebutton" name="singlebutton" class="btn appoint-btn">Make An Appointment</button>
                                     </div>
                                 </div>
