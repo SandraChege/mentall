@@ -118,20 +118,39 @@ a:focus i:not(.logout){
 .icons a {
     margin: 0.5rem;
 }*/
-/*.therapist-pending{
+.therapist-pending{
     display: flex;
     justify-content:right;
     align-items:right;
-}*/
+}
 .therapist-pending{
     position: relative;
     padding: 20px;
     width: 100%;    
 }
-/*.therapist-pending{
+.therapist-pending{
     position: fixed;
     top: 0;
     right: 0;
     padding: 20px;
     width: 100%;    
-}*/
+}
+
+
+
+/*USER REPORT*/
+#userlist .table-responsive thead{
+    border: 1px solid #000;
+}
+#userlist .table-responsive thead th {
+    padding: 15px;
+}
+#userlist .table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+#userlist .table-responsive tr {
+    border-bottom: 1px solid #000;
+}
+#userlist .table-responsive tr td{
+    padding: 15px;
+}

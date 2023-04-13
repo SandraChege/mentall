@@ -408,7 +408,7 @@ button:active {
     padding: 10px;
     margin: 10px;
 }
-#my-session #sess a{
+/*#my-session #sess a{
     background-color: var(--darkgreen);
     padding: 15px;
     margin: 20px;
@@ -432,7 +432,7 @@ button:active {
     padding: 15px;
     margin: 20px;
     font-size: 20px;
-}
+}*/
 .table-responsive thead{
     border: 1px solid #000;
 }
@@ -441,7 +441,7 @@ button:active {
 }
 .table-responsive tr {
     border-bottom: 1px solid #000;
-  }
+}
 /*CONTACT US PAGE*/
 .contactsection .list-unstyled .fa-solid{
     color: var(--deepteal);
@@ -522,7 +522,7 @@ button:active {
 /*FOOTER*/
 footer{
     background-color: var(--greengreen) !important;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 footer .pnet p{
     color: black;

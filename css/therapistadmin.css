@@ -88,4 +88,59 @@ body{
     transition: margin-left 0.3s ease;
 }
 
-
+/*USER REPORT*/
+#userlist .table-responsive thead{
+    border: 1px solid #000;
+}
+#userlist .table-responsive thead th {
+    padding: 15px;
+}
+#userlist .table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+#userlist .table-responsive tr {
+    border-bottom: 1px solid #000;
+}
+#userlist .table-responsive tr td{
+    padding: 15px;
+}
+/*THERAPIST APPROVAL*/
+section table #therapprovalbtn input[type=submit]{
+    background-color: var(--darkgreen);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--textcolor);
+}
+/* CARE TEAM*/
+.appointment_list .table-responsive thead{
+    border: 1px solid #000;
+}
+.appointment_list .table-responsive thead th{
+    padding: 15px;
+}
+.appointment_list .table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+.appointment_list .table-responsive tr {
+    border-bottom: 1px solid #000;
+}
+.appointment_list .table-responsive tr td{
+    padding: 15px;
+}
+/*THERAPIST*/
+.ther2approval .table-responsive thead{
+    border: 1px solid #000;
+}
+.ther2approval .table-responsive thead th{
+    padding: 15px;
+}
+.ther2approval .table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+.ther2approval .table-responsive tr {
+    border-bottom: 1px solid #000;
+}
+.ther2approval .table-responsive tr td{
+    padding: 15px;
+}

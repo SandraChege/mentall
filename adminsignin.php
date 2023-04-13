@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <footer class="text-center text-white">
+    <footer class="text-center text-white ">
         <div class="alizeh">
                 <!-- Grid container -->
                 <div class="container p-3 pb-0">

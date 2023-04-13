@@ -28,42 +28,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!--bootstrap link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Style for the outer container with class "bg-soft" */
-        .bg-soft {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-
-        /* Style for the larger column with class "col-7" */
-        .col-7 {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        /* Style for the smaller column with class "col-5" */
-        .col-5 {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-        }
-
-        /* Style for the text inside the larger column */
-        .text-black {
-            color: #000;
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Style for the profile image */
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
 <body>
     <!--<nav class="side-bar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar"> music:https://www.youtube.com/watch?v=5WZu2jmp6GE-->
@@ -82,24 +46,53 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
         </ul>
     </nav>
     <section class="p-4 my-container ">
-        <div class="card overflow-hidden">
-            <div class="bg-soft">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="text-black p-3">
-                            <h5 class="text-black">Welcome Back !</h5>
-                            <p> <?php echo $_SESSION['name'];?></p>
-                        </div>
-                    </div>
-                    <div class="col-5 align-self-end">
-                        <img src="assets/images/profile-img.png" alt="" class="img-fluid">
-                    </div>
-                </div>
+        <div class="therapistusers container-fluid">
+            <div class="table-responsive">
+                <h1 class="text-center text-black">CLIENT LIST</h1>
+                <table class="table table-striped table-hover table-bordered" style= "margin-bottom: 15.625rem;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <!--<th scope="col">Email</th>-->
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone Number</th>
+                        </tr>
+                    </thead>    
+                    <?php
+                        $id = $_SESSION['id'];
+
+                        $select_ther_team_data = "SELECT `client_id`, `therapist_id` FROM `assigned_therapist` WHERE `therapist_id` = '$id';";
+                        $select_ther_team_result = mysqli_query($conn, $select_ther_team_data);
+                        //print_r($select_ther_team_result);
+                        $i = 0;
+                        if($select_ther_team_result){
+                            while ($row  = mysqli_fetch_assoc($select_ther_team_result)) { //fetch array
+                                $i++;
+                                //$therinformation = $row['therapist_id'];
+                                $clientinformation = $row['client_id'];
+                                //$selectther = "SELECT `therapist_name`, `email` FROM `therapist_info` WHERE `therapist_id` = '$therinformation';";
+                                $selectclient= "SELECT  `client_name`, `Phone_No`, `email` FROM `client_info` WHERE `client_id` = '$clientinformation';";
+                                //$selecttherresult = mysqli_query($conn, $selectther);
+                                $selectclientresult = mysqli_query($conn, $selectclient);
+                                //print_r($selecttherresult);
+                                //$rows = mysqli_fetch_assoc($selecttherresult);
+                                $Rows= mysqli_fetch_assoc($selectclientresult);
+                    ?>
+                    <tr>
+                        <td><?php echo $i;?></td>
+                        <!--<td><?php//echo $row['user_email'];?></td>-->
+                        <td><?php echo $Rows['client_name'];?></td>
+                        <td><?php echo $Rows['email'];?></td>
+                        <td><?php echo $Rows['Phone_No']?></td>
+                    </tr>
+                        <?php
+                                }
+                            }                                                
+                        ?>
+                </table>
             </div>
-
-
         </div>
-             
     </section>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

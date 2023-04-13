@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     
   
     if(mysqli_num_rows($result_client) == 0 && mysqli_num_rows($result_therapist) == 0){
-      header("location:signin.php?message=Enter the correct password");
+      header("location:signin.php?message=Enter the correct email"); 
     }
   
     if(mysqli_num_rows($result_client) == 0 && mysqli_num_rows($result_therapist) == 1)  {
@@ -48,12 +48,9 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result_client) > 1 || mysqli_num_rows($result_therapist) > 1)  {
       header("location:signup.php?message=We are in deep trouble");
     }
-  }
-
-
-     
+  }    
 }else{
   $error[] ='incorrect password!';
   header("location:signin.php?message='Incorrect email or password'");
-  }
+}
 ?>

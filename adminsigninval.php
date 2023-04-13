@@ -13,21 +13,21 @@ if(isset($_POST['submit'])){
   $result = mysqli_query($conn, $select);
 
   if(mysqli_num_rows($result) == 0){
-    header("location:adminsignin.php?message=Incorrect password or email");
+    header("location:admintherapists.php?message=Incorrect password or email");
   }
 
   if(mysqli_num_rows($result) == 1)  {
     $row = mysqli_fetch_array($result);   
     $_SESSION['id'] = $row['admin_id'];
     $_SESSION['name'] = $row['admin_name'];
-    header('location:adminhome.php');
+    header('location:admintherapists.php');
   } 
   if(mysqli_num_rows($result) > 1 ){
-    header("location:adminsignin.php?message=We are in deep trouble");
+    header("location:admintherapists.php?message=We are in deep trouble");
   }
      
 }else{
   $error[] ='incorrect email or password!';
-  header("location:adminsignin.php?message='Incorrect email or password'");
+  header("location:admintherapists.php?message='Incorrect email or password'");
   }
 ?>

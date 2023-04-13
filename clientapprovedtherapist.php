@@ -1,23 +1,7 @@
 <?php
-session_start();
-if(isset($_SESSION['id']) && isset($_SESSION['name'])){
     include 'config/config.php';
-    $id = $_SESSION['id'];
-
-    $assign="SELECT `diagnosis_name`, `doc_type` FROM `diagnosis`WHERE client_id= '$id';";
-    $assign_result= mysqli_query($conn, $assign);
-    //print_r ($assign_result); //mysqli_result Object ( [current_field] => 0 [field_count] => 2 [lengths] => [num_rows] => 3 [type] => 0 ) 
-    
-    $fetch_result= mysqli_fetch_array($assign_result);
-    //print_r ($fetch_result); //Array ( [0] => Depression [diagnosis_name] => Depression [1] => Psychologist [doc_type] => Psychologist )
-    $doctorkind = $fetch_result['doc_type'];
-    print_r($doctorkind); //Psychologist
-    $diseasekind = $fetch_result['diagnosis_name'];
-    //print_r($diseasekind); //Depression
-
-    $daktaritype= "SELECT `therapist_id`, `therapist_name`, `Phone_No`, `email` FROM `therapist_info` WHERE `doctor_type` = '$doctorkind' AND `doc_disease` = '$diseasekind' AND `doc_qualifications` = 'approved';";
-    $daktari_type_result= mysqli_query($conn, $daktaritype);
-    print_r($daktari_type_result);
+    session_start();
+    if(isset($_SESSION['id']) && isset($_SESSION['name'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,50 +62,43 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         </nav>
                     </div>
                 </header>
-                <div id="therapproval" class="container-fluid">
-            <div class="ther2approval table-responsive">
-                <h1 class="text-center  text-black" >PENDING LIST</h1>
-                <table class=" table table-striped ">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope ="col">Accept</th>
-                        </tr>
-                    </thead>
-                    <?php
-                        // $ther_pending_list = "SELECT `therapist_id`, `therapist_name`, `doctor_type`, `doc_disease`, `doc_qualifications` FROM `therapist_info` WHERE doc_qualifications = 'pending' ORDER BY therapist_id;";
-                        // $ther_pending_list_result= mysqli_query($conn, $ther_pending_list);
-                        $i = 0;
-                        if($daktari_type_result){
-                            print_r("Michelle");
-                            while ($row = mysqli_fetch_array($daktari_type_result)) {
-                                print_r("WAmbui");
-                                $i++;
-                                $id = $row['therapist_id'];
-                    ?> 
-                    <tr>
-                        <td><?php echo $i;?></td>
-                        <td><?php echo $row['therapist_name'];?></td>
-                        <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['Phone_No'];?></td>
-                        <td>
-                            <form id="diagnosis" action="diagnosisdb.php" method="post">
-                                <input type="hidden" name="id" value= "<?php echo $row['therapist_id'];?>">
-                                <input type="submit" value="Approve" name="approve"> <br>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php
-                            }
-                        }
-                    ?> 
-                </table> 
-            </div>
-        </div>  
-            
+                <div class="container" id="my-session">
+                    <div class="my-session">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-bordered" style= "margin-bottom: 10rem;">
+                            <h1 class="text-center text-black">Your Therapist</h1>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone Number</th>
+                                </tr>
+                            </thead>
+                            <?php
+                                $id = $_SESSION['id'];
+
+                                $select_therapist_data = "SELECT `therapist_info`.`therapist_name`, `therapist_info`.`email`, `therapist_info`.`Phone_No` FROM `therapist_info` INNER JOIN `assigned_therapist` ON `therapist_info`.`therapist_id` = `assigned_therapist`.`therapist_id`";
+                                $select_user_data_result = mysqli_query($conn, $select_therapist_data);
+                                $i = 0;
+                                if($select_user_data_result){
+                                    while ($row  = mysqli_fetch_array($select_user_data_result)) {
+                                        $i++;
+                            ?>
+                            <tr>
+                                <td><?php echo $i;?></td>
+                                <td><?php echo $row['therapist_name'];?></td>
+                                <td><a href=""><?php echo $row['email'];?></a></td>
+                                <td><?php echo $row['Phone_No'];?></td>
+                            </tr>
+                            <?php 
+                                    }
+                                }
+                            ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
     <!--FOOTER-->
@@ -166,7 +143,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
         </div>
     </footer>
     <!--bootstrap JS link-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!--js link-->
     <script src="js/mentihub.js"></script>
     <!--font awesome kit-->

@@ -64,7 +64,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                                 <div class="mb-3">
                                     <label for="doctortype" class="form-label">Choose your area of expertise</label>
                                     <select name="doctortype" id="doctortype" class="col-md-6" required>
-                                        <option value="blank"></option>
+                                        <option value=""></option>
                                         <option value="Therapist">Therapist</option>
                                         <option value="Psychologist">Psychologist</option>
                                         <option value="Psychiatrist">Psychiatrist</option>
@@ -73,7 +73,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                                 <div class="mb-3">
                                     <label for="diseasetype" class="form-label">Choose your specialization</label>
                                     <select name="diseasetype" id="diseasetype" class="col-md-6" required>
-                                        <option value="blank"></option>
+                                        <option value=""></option>
                                         <option value="Depression">Depression</option>
                                         <option value="Anxiety">Anxiety</option>
                                         <option value="Ptsd">PTSD</option>
