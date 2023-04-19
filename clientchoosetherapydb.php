@@ -31,9 +31,9 @@ if(isset($_POST['submit']) && isset($_SESSION['id'])){
 
     // Assign patient to a doctor based on total score
     $doctor = "";
-    if ($totalScore >= 0 && $totalScore <= 18) {
+    if ($totalScore >= 0 && $totalScore <= 14) {
         $doctor = "Therapist";
-    } elseif ($totalScore >= 19 && $totalScore <= 36) {
+    } elseif ($totalScore >= 15 && $totalScore <= 30) {
         $doctor = "Psychologist";
     } else {
         $doctor = "Psychiatrist";

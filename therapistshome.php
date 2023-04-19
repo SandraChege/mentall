@@ -78,25 +78,31 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
             <li class="nav-item w-100"><a href="therapistshome.php" class="nav-link pl-4"><i class="fa-solid fa-house"></i><span class="nav-item">Home</span></a> </li>
             <li class="nav-item w-100"> <a href="therapistusers.php" class="nav-link pl-4"><i class="fa-solid fa-user"></i><span class="nav-item">Users</span></a></li>
             <li class="nav-item w-100"> <a href="therapistappointments.php" class="nav-link pl-4"><i class="fa-solid fa-calendar-check"></i><span class="nav-item">Appointments</span></a></li>
+            <li class="nav-item w-100"> <a href="therapistprofile.php" class="nav-link pl-4"><i class="fa-solid fa-address-card"></i><span class="nav-item">My profile</span></a></li>
             <li class="nav-item w-100"> <a href="logout.php" class="nav-link pl-4"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a> </li>
         </ul>
     </nav>
     <section class="p-4 my-container ">
-        <div class="card overflow-hidden">
-            <div class="bg-soft">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="text-black p-3">
-                            <h5 class="text-black">Welcome Back !</h5>
-                            <p> <?php echo $_SESSION['name'];?></p>
+        <div class="container overflow-hidden">
+            <div class="image-content">
+                <div class="therimage">
+                    <div class=" bg-image d-flex justify-content-center align-items-center"  style="background-image:url('images/therhome.jpg'); height: 50vh;">
+                            <div class="mask d-flex justify-content-center align-items-center" style="background-color: hsla(0, 0%, 0%, 0.6); height: 100%; width: 100%;">
+                                <div>
+                                    <!--<h2 style="color: #EAEDE7; font-size: 30px; font-family: poppins;">
+                                        How does mentihub work?
+                                    </h2>-->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-5 align-self-end">
-                        <img src="assets/images/profile-img.png" alt="" class="img-fluid">
-                    </div>
+                <div class="contennt1" style="margin:20px; line-height:30px;">
+                    <p> Welcome to Mentihub <?php echo $_SESSION['name'];?>.</p>
+                    <p>
+                        We're delighted to have you visit our website. As a therapist, we understand the importance of finding the right platform to connect with clients and provide counseling services. At our practice, we offer professional counseling services to individuals in need of support. We are committed to maintaining the highest standards of care and ensuring the safety and well-being of our clients. As part of our process, we have a vetting procedure in place to ensure that our therapists are qualified and experienced to offer the best care to our clients. Once you have signed in and submitted the necessary documents, our team will review your credentials and experience. We appreciate your patience as we carefully review each submission to ensure the quality and professionalism of our practice.
+                    </p>
                 </div>
             </div>
-
 
         </div>
              

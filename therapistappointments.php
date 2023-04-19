@@ -42,12 +42,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
             <li class="nav-item w-100"><a href="therapistshome.php" class="nav-link pl-4"><i class="fa-solid fa-house"></i><span class="nav-item">Home</span></a> </li>
             <li class="nav-item w-100"> <a href="therapistusers.php" class="nav-link pl-4"><i class="fa-solid fa-user"></i><span class="nav-item">Users</span></a></li>
             <li class="nav-item w-100"> <a href="therapistappointments.php" class="nav-link pl-4"><i class="fa-solid fa-calendar-check"></i><span class="nav-item">Appointments</span></a></li>
+            <li class="nav-item w-100"> <a href="therapistprofile.php" class="nav-link pl-4"><i class="fa-solid fa-address-card"></i><span class="nav-item">My profile</span></a></li>
             <li class="nav-item w-100"> <a href="logout.php" class="nav-link pl-4"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a> </li>
         </ul>
     </nav>
     <section class="p-4 my-container ">
-        <div class="therapistappointments container-fluid">
-            <h1 class="text-center text-black">CLIENT LIST</h1>
+        <div class="therapistappointments container-fluid table-responsive">
+            <h1 class="text-center text-black">MY APPOINTMENTS</h1>
             <table class="table table-striped table-hover table-bordered" style= "margin-bottom: 15.625rem;">
                 <thead>
                     <tr>
@@ -58,6 +59,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         <th scope="col">Time</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
+                        <!--<th scope="col">Action</th>-->
                     </tr>
                 </thead>    
                 <?php
@@ -73,9 +75,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                             $clientinformation = $row['client_id'];
                             //$selectther = "SELECT `therapist_name`, `email` FROM `therapist_info` WHERE `therapist_id` = '$therinformation';";
                             $selectclient= "SELECT  `client_name`, `Phone_No`, `email` FROM `client_info` WHERE `client_id` = '$clientinformation';";
-                            $selectstatus = "SELECT `client_id`, `date`, `time`, `status` FROM `appointments` WHERE `client_id`= '$clientinformation';";
+                            $selectstatus = "SELECT `client_id`, `date`, `time`, `status` FROM `appointments` WHERE `client_id` = '$clientinformation';";
                             $selectstatusresult = mysqli_query($conn, $selectstatus);
-                            //$selecttherresult = mysqli_query($conn, $selectther);
                             $selectclientresult = mysqli_query($conn, $selectclient);
                             //print_r($selecttherresult);
                             //$rows = mysqli_fetch_assoc($selecttherresult);
@@ -91,6 +92,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         <td><?php echo $mows['time']?></td>
                         <td><?php echo $mows['date']?></td>
                         <td><?php echo $mows['status']?></td>
+                        <!--<td>
+                            <form id="rescheduleappointmentbtn" action="therapistrescheduleappointment.php" method="post">
+                                <input type="hidden" name="id" value= "<?php //echo $row['therapist_id'];?>"> <?php //echo $row['Appointment_id'];?>
+                                <input type="submit" value="Reschedule" name="submit">
+                            </form>
+                        </td>-->
                     </tr>
                         <?php
                                 }

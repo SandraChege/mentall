@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
-    include 'config/config.php';
+    include "config/config.php";
     session_start();
     if(isset($_SESSION['id']) && isset($_SESSION['name'])){
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
     <link rel="icon" type="image/x-icon" href="images/Logo.png">
     <!--css link-->
     <link rel="stylesheet" href="css/therapistadmin.css">
-    <!--<link rel="stylesheet" href="css/admin.css">-->
     <!--<link rel="stylesheet" href="css/mentihub.css">-->
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -50,50 +49,79 @@
             <li class="nav-item w-100"> <a href="adminlogout.php" class="nav-link pl-4"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a> </li>
         </ul>
     </nav>
-    <section class="p-4 my-container">
-        <div id="userlist" class="container-fluid">
+    <section class="p-4 my-container ">
+        <div id="therapproval" class="container-fluid ther2approval">
             <div class="table-responsive">
-                <h1 class="text-center text-black">CLIENT LIST</h1>
-                <table class="table table-striped table-hover table-bordered" style= "margin-top: 3rem;">
+                <h1 class="text-center  text-black" >PENDING LIST</h1>
+                <table class=" table table-striped ">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Designation</th>
+                            <th scope="col">Specialization</th>
+                            <th scope="col">Documents</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <?php
-                        $id = $_SESSION['id'];
-
-                        $select_user_data= "SELECT `client_name`, `Phone_No`, `email` FROM `client_info` ORDER BY client_id;";
-                        $select_user_data_result = mysqli_query($conn, $select_user_data);
+                        $ther_pending_list = "SELECT `therapist_id`, `therapist_name`, `doctor_type`, `doc_disease`, `doc_qualifications` FROM `therapist_info` WHERE doc_qualifications = 'pending' ORDER BY therapist_id;";
+                        $ther_pending_list_result= mysqli_query($conn, $ther_pending_list);
                         $i = 0;
-                        if($select_user_data_result){
-                            while ($row  = mysqli_fetch_array($select_user_data_result)) {
+                        if($ther_pending_list_result){
+                            while ($row = mysqli_fetch_array($ther_pending_list_result)) {
                                 $i++;
-                    ?>  
+                                $id = $row['therapist_id'];
+                                $ther_documents= "SELECT `doc_name` FROM `qualifications` WHERE therapist_id = $id ORDER BY therapist_id;";
+                                $ther_documents_result= mysqli_query($conn, $ther_documents);
+                    ?> 
                     <tr>
                         <td><?php echo $i;?></td>
-                        <td><?php echo $row['client_name']?></td>
-                        <td><?php echo $row['Phone_No']?></td>
-                        <td><?php echo $row['email']?></td>
+                        <td><?php echo $row['therapist_name'];?></td>
+                        <td><?php echo $row['doctor_type'];?></td>
+                        <td><?php echo $row['doc_disease'];?></td>
+                        <td> 
+                            <?php
+                                if(mysqli_num_rows($ther_documents_result) === 0){
+                            ?> 
+                                <p>No documents found</p>
+                            <?php
+                                }
+                                if(mysqli_num_rows($ther_documents_result) === 1) {
+                                   $document = mysqli_fetch_assoc($ther_documents_result);
+                            ?>
+                            <a target="_blank" href=".\uploadFiles\<?php echo $document['doc_name'];?>"><?php echo $document['doc_name'];?></a>                         
+                            <?php       
+                                } else {
+                                    while ($rows = mysqli_fetch_array($ther_documents_result)) {
+                            ?>
+                            <a target="_blank" href=".\uploadFiles\<?php echo $document['doc_name'];?>"><?php echo $document['doc_name'];?></a><br>
+                            <?php
+                                    }
+                                }
+                                
+                            ?>
+
+                        </td> <!--documents--> <!--<a href="/uploadFiles/<?php echo $rs2['doc_name'];?>">Certificates</a>-->
+                        <td><?php echo $row['doc_qualifications'];?></td>
+                        <td>
+                            <form id="therapprovalbtn" action="adminacceptapproval.php" method="post">
+                                <input type="hidden" name="id" value= "<?php echo $row['therapist_id'];?>">
+                                <input type="submit" value="Approve" name="approve"> <br>
+                                <input type="submit" value="Deny" name="deny">
+                            </form>
+                        </td>
                     </tr>
-                    <?php 
+                    <?php
                             }
                         }
-                    ?>
+                    ?> 
                 </table> 
             </div>
-        </div>    
-    </section>  
-    <!--<footer class="bg-light text-center text-lg-start"> 
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright:
-            <a class="text-dark" href="https://mentihub.com/">Mentihub.com</a>
-        </div>
-    </footer>--> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>  
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>
 <?php

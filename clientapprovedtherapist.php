@@ -76,14 +76,34 @@
                                 </tr>
                             </thead>
                             <?php
+                                // $id = $_SESSION['id'];
+
+                                // $select_therapist_data = "SELECT `therapist_info`.`therapist_name`, `therapist_info`.`email`, `therapist_info`.`Phone_No` FROM `therapist_info` INNER JOIN `assigned_therapist` ON `therapist_info`.`therapist_id` = `assigned_therapist`.`therapist_id`";
+                                // $select_user_data_result = mysqli_query($conn, $select_therapist_data);
+                                // $i = 0;
+                                // if($select_user_data_result){
+                                //     while ($row  = mysqli_fetch_array($select_user_data_result)) {
+                                //         $i++;
                                 $id = $_SESSION['id'];
 
-                                $select_therapist_data = "SELECT `therapist_info`.`therapist_name`, `therapist_info`.`email`, `therapist_info`.`Phone_No` FROM `therapist_info` INNER JOIN `assigned_therapist` ON `therapist_info`.`therapist_id` = `assigned_therapist`.`therapist_id`";
-                                $select_user_data_result = mysqli_query($conn, $select_therapist_data);
+                                $select_me_team_data = "SELECT `client_id`, `therapist_id` FROM `assigned_therapist` WHERE `client_id` = '$id';";
+                                $select_me_team_result = mysqli_query($conn, $select_me_team_data);
+                                //print_r($select_ther_team_result);
                                 $i = 0;
-                                if($select_user_data_result){
-                                    while ($row  = mysqli_fetch_array($select_user_data_result)) {
+                                if($select_me_team_result){
+                                    while ($row  = mysqli_fetch_assoc($select_me_team_result)) { //fetch array
                                         $i++;
+                                        
+                                        $therapistinformation = $row['therapist_id'];
+                                        
+                                        $selecttherapist= "SELECT  `therapist_name`, `Phone_No`, `email` FROM `therapist_info` WHERE `therapist_id` = '$therapistinformation';";
+                                        //$selectdiagnosis= " SELECT `client_id`, `diagnosis_name` FROM `diagnosis` WHERE `client_id` = '$clientinformation';";
+                                        
+                                        $selecttherapistresult = mysqli_query($conn, $selecttherapist);
+                                        //$selectdiagnosisresult = mysqli_query($conn, $selectdiagnosis);
+                                        
+                                        $row= mysqli_fetch_assoc($selecttherapistresult);
+                                        //$diseaserow = mysqli_fetch_assoc($selectdiagnosisresult);
                             ?>
                             <tr>
                                 <td><?php echo $i;?></td>

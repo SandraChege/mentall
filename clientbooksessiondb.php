@@ -6,7 +6,7 @@
 
         $id = $_SESSION['id'];
         //$name = $conn->real_escape_string($_POST['name']);
-        $email = $conn->real_escape_string($_POST['email']);
+        //$email = $conn->real_escape_string($_POST['email']);//made this a comment
         $date = $conn->real_escape_string($_POST['date']);
         $time = $conn->real_escape_string($_POST['appoint-time']);
 

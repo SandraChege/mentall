@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
     include 'config/config.php';
     session_start();
     if(isset($_SESSION['id']) && isset($_SESSION['name'])){
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
     <link rel="icon" type="image/x-icon" href="images/Logo.png">
     <!--css link-->
     <link rel="stylesheet" href="css/therapistadmin.css">
-    <!--<link rel="stylesheet" href="css/admin.css">-->
     <!--<link rel="stylesheet" href="css/mentihub.css">-->
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -50,54 +49,66 @@
             <li class="nav-item w-100"> <a href="adminlogout.php" class="nav-link pl-4"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a> </li>
         </ul>
     </nav>
-    <section class="p-4 my-container">
-        <div id="userlist" class="container-fluid">
-            <div class="table-responsive">
-                <h1 class="text-center text-black">CLIENT LIST</h1>
-                <table class="table table-striped table-hover table-bordered" style= "margin-top: 3rem;">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Phone number</th>
-                            <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <?php
-                        $id = $_SESSION['id'];
-
-                        $select_user_data= "SELECT `client_name`, `Phone_No`, `email` FROM `client_info` ORDER BY client_id;";
-                        $select_user_data_result = mysqli_query($conn, $select_user_data);
-                        $i = 0;
-                        if($select_user_data_result){
-                            while ($row  = mysqli_fetch_array($select_user_data_result)) {
-                                $i++;
-                    ?>  
-                    <tr>
-                        <td><?php echo $i;?></td>
-                        <td><?php echo $row['client_name']?></td>
-                        <td><?php echo $row['Phone_No']?></td>
-                        <td><?php echo $row['email']?></td>
-                    </tr>
-                    <?php 
-                            }
-                        }
-                    ?>
-                </table> 
-            </div>
-        </div>    
-    </section>  
-    <!--<footer class="bg-light text-center text-lg-start"> 
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright:
-            <a class="text-dark" href="https://mentihub.com/">Mentihub.com</a>
-        </div>
-    </footer>--> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="p-4 my-container ">
+        <div class="appointment_list container-fluid">
+            <?php
+                $adminid =  $_SESSION['id'];
+                $adminprofile = "SELECT * FROM `admin_info` WHERE admin_id = '$adminid';";
+                $admin_profile_result = mysqli_query($conn, $adminprofile);
+            ?>
+            <div class="myprofile-info">
+                <p>
+                    Hello <span>Admin</span>.
+                </p>
+                <h6>This is your profile page. You can see your information here and make changes.</h6>
+                <div class="form-table-profile">
+                    <form action="">
+                        <table class=""> 
+                            <?php
+                                if($admin_profile_result){
+                                    while ($row  = mysqli_fetch_array($admin_profile_result)){
+                            ?>
+                            <!--Email-->
+                            <tr id="profdata">
+                                <td>Email Address:<span style="width:300px; display:inline-block;"class= "userinfo"><?php echo $row['admin_name']?></span></td>
+                            </tr> 
+                            <!--Phone number-->
+                            <tr id="profdata">
+                                <td>Phone Number:<span style="width:300px; display:inline-block;" class= "userinfo"> <?php echo $row['admin_phone']?> </span></td>
+                            </tr> 
+                            <?php 
+                                    }
+                                }
+                            ?>      
+                        </table>
+                    </form>
+                </div>
+                <div class="change-profileinfo">
+                    <P>
+                        Change Passowrd
+                    </P>
+                    <form action="profilepassword.php" method="post">
+                        <!--Can only change password and phonenumber-->
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="Password" id="inputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="ConfirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="Password" required>
+                        </div>
+                        <input type="submit" value="Submit" name = "submit">
+                    </form>
+                </div>
+            </div> 
+        </div>  
+    </section>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
 <?php
-}else{
-    header("location:adminsignin.php?message=Please sign in");
-}
+    }else{
+        header("location:adminsignin.php?message=Please sign in");
+    }
 ?>

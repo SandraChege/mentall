@@ -11,13 +11,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
     $fetch_result= mysqli_fetch_array($assign_result);
     //print_r ($fetch_result); //Array ( [0] => Depression [diagnosis_name] => Depression [1] => Psychologist [doc_type] => Psychologist )
     $doctorkind = $fetch_result['doc_type'];
-    print_r($doctorkind); //Psychologist
+    //print_r($doctorkind); //Psychologist
     $diseasekind = $fetch_result['diagnosis_name'];
     //print_r($diseasekind); //Depression
 
     $daktaritype= "SELECT `therapist_id`, `therapist_name`, `Phone_No`, `email` FROM `therapist_info` WHERE `doctor_type` = '$doctorkind' AND `doc_disease` = '$diseasekind' AND `doc_qualifications` = 'approved';";
     $daktari_type_result= mysqli_query($conn, $daktaritype);
-    print_r($daktari_type_result);
+    //print_r($daktari_type_result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +80,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                 </header>
                 <div id="therapproval" class="container-fluid">
             <div class="ther2approval table-responsive">
-                <h1 class="text-center  text-black" >PENDING LIST</h1>
+                <h1 class="text-center  text-black" >THERAPIST LIST</h1>
                 <table class=" table table-striped ">
                     <thead>
                         <tr>
@@ -96,9 +96,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         // $ther_pending_list_result= mysqli_query($conn, $ther_pending_list);
                         $i = 0;
                         if($daktari_type_result){
-                            print_r("Michelle");
+                            //print_r("Michelle");
                             while ($row = mysqli_fetch_array($daktari_type_result)) {
-                                print_r("WAmbui");
+                                //print_r("WAmbui");
                                 $i++;
                                 $id = $row['therapist_id'];
                     ?> 
@@ -110,7 +110,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         <td>
                             <form id="diagnosis" action="diagnosisdb.php" method="post">
                                 <input type="hidden" name="id" value= "<?php echo $row['therapist_id'];?>">
-                                <input type="submit" value="Approve" name="approve"> <br>
+                                <input type="submit" value="Approve" name="approve" style="background-color:#364C44; padding: 8px; border-radius: 5px; margin: 5px; color: #EAEDE7;" > <br>
                             </form>
                         </td>
                     </tr>

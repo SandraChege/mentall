@@ -235,7 +235,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Dissociation And Dissociative Disorders</h5>
-                                                    <p class="card-text">Dissociation is a mental process that causes a lack of connection in a person’s thoughts, memory and sense of identity.</p> <br>
+                                                    <p class="card-text">Dissociation is a mental process that causes a lack of connection in a person’s thoughts, memory and sense of identity.People with dissociative disorders escape reality in ways that are involuntary.</p> <br>
                                                     <a href="dissociation.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
@@ -284,12 +284,26 @@
                                                 <div class="card-body">
                                                     <h5 class="card-title">Obsessive Compulsive Disorder(OCD)</h5>
                                                     <p class="card-text">Obsessive-compulsive disorder (OCD) is a mental illness that causes repeated unwanted thoughts or sensations (obsessions) or the urge to do something over and over again (compulsions).</p>
-                                                    <a href="#" class="nahele btn">Learn more</a>
+                                                    <a href="ocd.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!--panic disorder-->
+                                    <div class="col-md-4 hema kamaile">
+                                        <div class="keawe">
+                                            <div class="card h-100">
+                                                <div class="card-img-top">
+                                                    <img src="images/panicdisorder1.png" alt="" height="30%" width="100%">
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Panic disorder</h5>
+                                                    <p class="card-text">A panic attack is a sudden episode of intense fear that triggers severe physical reactions when there is no real danger or apparent cause. Panic attacks can be very frightening.</p>
+                                                    <a href="paranoia.html" class="nahele btn">Learn more</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--Paranoia-->
                                     <div class="col-md-4 hema kamaile">
                                         <div class="keawe">
@@ -299,7 +313,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Paranoia</h5>
-                                                    <p class="card-text">Paranoia involves intense anxious or fearful feelings and thoughts often related to persecution, threat, or conspiracy.</p>
+                                                    <p class="card-text">Paranoia is the feeling that you’re being threatened in some way, such as people watching you or acting against you, even though there’s no proof that it’s true. It happens to a lot of people at some point.</p>
                                                     <a href="paranoia.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
@@ -307,6 +321,13 @@
                                     </div>
                                 </div>
                                 <!--row 6-->
+                                <div class="row aukai mb-4 gy-4">
+                                    <!--PTSD-->
+                                    
+                                    <!--psychosis-->
+                                    <!--schizorphrenia-->
+                                </div>
+                                <!--ROW 7-->
                                 <div class="row aukai mb-4 gy-4">
                                     <!--PTSD-->
                                     <div class="col-md-4 hema kahawai">
@@ -323,11 +344,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--psychosis-->
-                                    <!--schizorphrenia-->
-                                </div>
-                                <!--ROW 7-->
-                                <div class="row aukai mb-4 gy-4">
                                     <!--self-harm-->
                                     <div class="col-md-4 hema kamaile">
                                         <div class="keawe">
@@ -338,7 +354,7 @@
                                                 <div class="card-body">
                                                     <h5 class="card-title">Self-harm</h5>
                                                     <p class="card-text">Self-harm is the act of purposely hurting oneself (as by cutting or burning the skin) as an emotional coping mechanism</p>
-                                                    <a href="#" class="nahele btn">Learn more</a>
+                                                    <a href="selfharm.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -372,7 +388,7 @@
                                                 <div class="card-body">
                                                     <h5 class="card-title">Suicidal feelings</h5>
                                                     <p class="card-text">Suicidal feelings is the thought process of having ideas, or ruminations about the possibility of ending one's own life.</p>
-                                                    <a href="#" class="nahele btn">Learn more</a>
+                                                    <a href="suicidal.html" class="nahele btn">Learn more</a>
                                                 </div>
                                             </div>
                                         </div>

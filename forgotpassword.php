@@ -1,5 +1,4 @@
-<?php
-?>
+<?php?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,33 +40,31 @@
             </header>
             <!--holds the form-->
             <div class="container">
-                <div class="anil">
+                <div class="Forgotpass">
                 <?php if(isset($_GET['message'])) {?>
 		                                <div class="container">
                                             <div class="mes" style="margin: 10px; display: block; text-align: center; background-color: #0FCDA3; color: #EAEDE7; padding: 2px; border-radius: 5px;">
                                                 <p><?php echo $_GET['message']; ?> </p>
                                             </div>									    
 									    </div>
-								<?php } ?>
-                    <form action="adminsigninval.php" method="post" class="form-center">
-                        <div class="kai">
-                            <div class="sol">
+								<?php }?>
+                    <form action="forgotpasswordval.php" method="post"> <!--class="form-center d-flex justify-content-center align-items-center-->
+                        <div class="forgot-password-container">
+                            <div class="Forgot-password-email">
+                                <h3>
+                                  Forgot Password
+                                </h3>
                                 <p>
-                                  Admin Login
+                                    Enter your email address
                                 </p>
                             </div>
-                            <div class="zephyr">
+                            <div class="zzep">
                                 <div class="mb-3">
                                     <label for="InputEmail1" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="InputEmail1" name= "UserEmail" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="InputPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="InputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="Password" required>
-                                </div>
-                                <!--<a href="adminforgotpassword.php" class="forgotpasswordlink" style="color: #364C44; padding:auto;">Forgot Password</a>-->
-                                <div class="tempest">
-                                    <button type="submit" class="btn" name="submit">Submit</button>
+                                <div class="emailsubmit">
+                                    <button type="submit" class="btn" name="emailcheck">Continue</button>
                                 </div>
                             </div>
                         </div>
@@ -76,46 +73,6 @@
             </div>
         </div>
     </div>
-    <footer class="text-center text-white ">
-        <div class="alizeh">
-                <!-- Grid container -->
-                <div class="container p-3 pb-0">
-                  <!-- Section: Social media -->
-                    <section class="mb-3">
-                        <!-- Facebook -->
-                        <a class="btn text-white btn-floating m-1" href="#!" style="background-color: #002C31;" role="button">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <!-- Twitter -->
-                        <a class="btn text-white btn-floating m-1" href="#!" style="background-color: #002C31;" role="button">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <!-- Google -->
-                        <a class="btn text-white btn-floating m-1" href="#!" style="background-color: #002C31;" role="button">
-                        <i class="fab fa-google"></i>
-                        </a>
-                        <!-- Instagram -->
-                        <a class="btn text-white btn-floating m-1" href="#!" style="background-color: #002C31;" role="button">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <!-- Linkedin -->
-                        <a class="btn text-white btn-floating m-1" href="#!" style="background-color: #002C31;" role="button">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </section>
-                  <!-- Section: Social media -->
-                </div>
-                <!-- Grid container -->
-              
-                <!-- Copyright -->
-                <div class="text-center p-3 pnet">
-                  <p>
-                    © 2023 Mentihub. All rights reserved.
-                  </p>
-                </div>
-                <!-- Copyright -->
-        </div>
-    </footer>
     <!--bootstrap JS link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--js link-->

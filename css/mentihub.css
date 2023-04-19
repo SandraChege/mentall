@@ -129,6 +129,58 @@
     text-decoration: none;
     padding: 8px;
 }
+/*FORGOT PASSWORD*/
+.form-center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.forgot-password-container .Forgot-password-email h3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 550;
+    font-family: var(--poppins);
+    letter-spacing: 1px;
+}
+.Forgot-password-email p{
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    margin:10px auto 10px 5px;
+}
+.zzep .mb-3{
+    padding: 5px;
+}
+.zzep .mb-3 label{
+    font-weight: 450;
+}
+.zzep .mb-3 input{
+    max-width: 600px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.emailsubmit {
+    margin-bottom: 1px;
+    background-color: var(--darkgreen);
+}
+.emailsubmit button[type=submit]{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    width: 600px;
+    padding: 8px;
+}
+.emailsubmit .btn:hover, .emailsubmit .btn:focus{
+    background-color: var(--darkgreen);
+    border: 1px solid var(--darkgreen);
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
 /*HOMEPAGE*/
 .container{
     margin-top: -10px;

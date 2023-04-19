@@ -10,6 +10,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
     if ($qualification == "undefined"){
         header(("location:therapistqualification.php"));
     }
+    $select_refer_therapist= "SELECT * FROM `therapist_info` WHERE `therapist_id`!='$id'";
+    $select_refer_therapist_result = mysqli_query($conn, $select_refer_therapist);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +44,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
             <li class="nav-item w-100"><a href="therapistshome.php" class="nav-link pl-4"><i class="fa-solid fa-house"></i><span class="nav-item">Home</span></a> </li>
             <li class="nav-item w-100"> <a href="therapistusers.php" class="nav-link pl-4"><i class="fa-solid fa-user"></i><span class="nav-item">Users</span></a></li>
             <li class="nav-item w-100"> <a href="therapistappointments.php" class="nav-link pl-4"><i class="fa-solid fa-calendar-check"></i><span class="nav-item">Appointments</span></a></li>
+            <li class="nav-item w-100"> <a href="therapistprofile.php" class="nav-link pl-4"><i class="fa-solid fa-address-card"></i><span class="nav-item">My profile</span></a></li>
             <li class="nav-item w-100"> <a href="logout.php" class="nav-link pl-4"><i class="fas fa-sign-out-alt"></i></i><span class="nav-item">Logout</span> </a> </li>
         </ul>
     </nav>
@@ -57,6 +60,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
+                            <th scope="col">Diagnosis</th>
+                            <th scope="refer">Refer</th>
+                            <th scope= "col">Reffered Therapist</th>
                         </tr>
                     </thead>    
                     <?php
@@ -69,15 +75,17 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         if($select_ther_team_result){
                             while ($row  = mysqli_fetch_assoc($select_ther_team_result)) { //fetch array
                                 $i++;
-                                //$therinformation = $row['therapist_id'];
+                                
                                 $clientinformation = $row['client_id'];
-                                //$selectther = "SELECT `therapist_name`, `email` FROM `therapist_info` WHERE `therapist_id` = '$therinformation';";
+                                
                                 $selectclient= "SELECT  `client_name`, `Phone_No`, `email` FROM `client_info` WHERE `client_id` = '$clientinformation';";
-                                //$selecttherresult = mysqli_query($conn, $selectther);
+                                $selectdiagnosis= " SELECT `client_id`, `diagnosis_name` FROM `diagnosis` WHERE `client_id` = '$clientinformation';";
+                                
                                 $selectclientresult = mysqli_query($conn, $selectclient);
-                                //print_r($selecttherresult);
-                                //$rows = mysqli_fetch_assoc($selecttherresult);
+                                $selectdiagnosisresult = mysqli_query($conn, $selectdiagnosis);
+                                
                                 $Rows= mysqli_fetch_assoc($selectclientresult);
+                                $diseaserow = mysqli_fetch_assoc($selectdiagnosisresult);
                     ?>
                     <tr>
                         <td><?php echo $i;?></td>
@@ -85,6 +93,38 @@ if(isset($_SESSION['id']) && isset($_SESSION['name'])){
                         <td><?php echo $Rows['client_name'];?></td>
                         <td><?php echo $Rows['email'];?></td>
                         <td><?php echo $Rows['Phone_No']?></td>
+                        <td><?php echo $diseaserow['diagnosis_name']?></td>
+                        <td>
+                            <form action="therapistreferclient.php" method="post" id="referclientsbtn">
+                                <input type="hidden" id="clId" name="clId" value="<?php echo $row['client_id'];?>">
+                                <select name="therapist" id="therapist" class="form-select" required>
+                                    <option selected>Choose one</option>
+                                    <?php
+                                        foreach ($select_refer_therapist_result as $therapistresult) {
+                                            $therapistid=$therapistresult['therapist_id'];
+                                            $therapistname=$therapistresult['therapist_name'];
+                                            //$therapistcountquery="SELECT  FROM `client_info` WHERE `th_ID`='$therapistid'";//count number of ids
+                                            //$therapistcountres=mysqli_query($mysqli,$therapistcountquery);
+                                            //$therapistcount=mysqli_fetch_assoc($therapistcountres);
+                                            //$count=$therapistcount['COUNT(`clth_ID`)'];
+                                    ?>
+                                    <option value="<?php echo $therapistid;?>"><?php echo $therapistname;?></option>
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Refer" name="submit">
+                                </td>
+                            </form>
+                        </td>
+                        <!--<td>
+                            <form id="referclientsbtn" action="therapistreferclient.php" method="post">
+                                <input type="hidden" name="clientkitambulisho" value= "<?php //echo $row['client_id'];?>">
+                                <input type="submit" value="Refer" name="Refer">
+                            </form>
+                        </td>-->
                     </tr>
                         <?php
                                 }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--roboto);
 }
 :root{
     --poppins:'Poppins', sans-serif;
@@ -16,6 +17,7 @@
     --cloudburst: #1F2F4F;
     --lightgreen: #ebfaf4;
     --sidebar-width: 200px;
+    --footer-height: 8vh;
 }
 body{
     min-height: 100vh;
@@ -27,6 +29,7 @@ body{
     width: var(--sidebar-width);
     height: 100vh;
     position: fixed;
+    bottom: -var(--footer-height);
     left: -var(--sidebar-width);
     transition: left 0.3s ease;
 }
@@ -75,6 +78,36 @@ body{
 #sidebar ul.navbar-nav .nav-link .fas{
     padding-right: 20px;
 }
+/* dropdown starts here */
+#sidebar .dropdown button{
+    color:white;
+    background-color: var(--darkgreen);
+    margin: 5px auto;
+}
+#sidebar .dropdown ul{
+    width: 100%;
+    background-color: var(--darkgreen);
+}
+#sidebar .dropdown ul .dropdown-nav-item{
+    width: 100%;
+}
+#sidebar .dropdown ul .dropdown-nav-item .dropdown-item{
+    padding: 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#sidebar .dropdown ul .dropdown-nav-item .dropdown-item .fa-solid{
+    padding-right: 20px;
+}
+#sidebar .dropdown ul .dropdown-nav-item .dropdown-item:hover{
+    background-color: var(--lightgreen);
+    color: #000;
+}
+/**dropdown ends here */
 #sidebar ul.navbar-nav .nav-link:hover {
     background-color: var(--lightgreen);
     color: #000;
@@ -112,6 +145,14 @@ section table #therapprovalbtn input[type=submit]{
     margin: 5px;
     color: var(--textcolor);
 }
+/*delete therapist*/
+section table #deletetherapistbtn input[type=submit]{
+    background-color: var(--darkgreen);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--textcolor);
+}
 /* CARE TEAM*/
 .appointment_list .table-responsive thead{
     border: 1px solid #000;
@@ -143,4 +184,79 @@ section table #therapprovalbtn input[type=submit]{
 }
 .ther2approval .table-responsive tr td{
     padding: 15px;
+}
+/*.ther2approval table #diagnosis input[type=submit]{
+    background-color: var(--darkgreen);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--textcolor);
+}*/
+/*ADMIN PAGE*/
+/*APPOINTMENT PAGE*/
+.therapistappointments .table-responsive thead{
+    border: 1px solid #000;
+}
+.therapistappointments .table-responsive thead th{
+    padding: 15px;
+}
+.therapistappointments .table-responsive tr:nth-child(odd) {
+    background-color: rgba(235, 250, 244, 0.8);/*rgba(15, 205, 163, 0.1);*/
+}
+.therapistappointments .table-responsive tr {
+    border-bottom: 1px solid #000;
+}
+.therapistappointments .table-responsive tr td{
+    padding: 15px;
+}
+/*THERAPIST SITE*/
+/*REFER CLIENTS*/
+section table input[type=submit]{
+    background-color: var(--darkgreen);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--textcolor);
+}
+/*RESCHEDULE APPOINTMENT*/
+section table #rescheduleappointmentbtn input[type=submit]{
+    background-color: var(--darkgreen);
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    color: var(--textcolor);
+}
+/*PROFILE INFORMATION FOR ADMIN AND THERAPIST*/
+.myprofile-info p{
+    padding: 10px;
+    font-size: 30px;
+}
+.myprofile-info h6{
+    padding: 10px;
+}
+.myprofile-info .form-table-profile #profdata td{
+    padding: 20px;   
+}
+.form-table-profile .userinfo{
+    border: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+.myprofile-info .change-profileinfo{
+    margin-top: 30px;
+}
+.myprofile-info .change-profileinfo input[type = password]{
+    border: 1px solid black;
+}
+.myprofile-info .change-profileinfo input[type=submit]{
+    padding: 10px 30px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: var(--darkgreen);
+    color: var(--textcolor);
 }

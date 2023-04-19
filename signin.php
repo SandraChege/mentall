@@ -65,6 +65,7 @@
                                     <label for="InputPassword" class="form-label">Password</label>
                                     <input type="password" class="form-control" id="InputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="Password" required>
                                 </div>
+                                <!--<a href="theruserforgotpassword.php" class="forgotpasswordlink" style="color: #364C44; padding:auto;">Forgot Password</a>-->
                                 <div class="tempest">
                                     <button type="submit" class="btn" name="submit">Submit</button>
                                 </div>
